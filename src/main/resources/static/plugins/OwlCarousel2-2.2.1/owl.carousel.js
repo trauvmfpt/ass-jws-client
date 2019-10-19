@@ -488,7 +488,7 @@
 			.removeClass(this.options.loadingClass)
 			.addClass(this.options.loadedClass);
 
-		// register event handlers
+		// authen event handlers
 		this.registerEventHandlers();
 
 		this.leave('initializing');
@@ -1547,7 +1547,7 @@
 	/**
 	 * Registers an event or state.
 	 * @public
-	 * @param {Object} object - The event or state to register.
+	 * @param {Object} object - The event or state to authen.
 	 */
 	Owl.prototype.register = function(object) {
 		if (object.type === Owl.Type.Event) {
@@ -1748,7 +1748,7 @@
 		// set default options
 		this._core.options = $.extend({}, AutoRefresh.Defaults, this._core.options);
 
-		// register event handlers
+		// authen event handlers
 		this._core.$element.on(this._handlers);
 	};
 
@@ -1873,7 +1873,7 @@
 		// set the default options
 		this._core.options = $.extend({}, Lazy.Defaults, this._core.options);
 
-		// register event handler
+		// authen event handler
 		this._core.$element.on(this._handlers);
 	};
 
@@ -1993,7 +1993,7 @@
 		// set default options
 		this._core.options = $.extend({}, AutoHeight.Defaults, this._core.options);
 
-		// register event handlers
+		// authen event handlers
 		this._core.$element.on(this._handlers);
 	};
 
@@ -2122,7 +2122,7 @@
 		// set default options
 		this._core.options = $.extend({}, Video.Defaults, this._core.options);
 
-		// register event handlers
+		// authen event handlers
 		this._core.$element.on(this._handlers);
 
 		this._core.$element.on('click.owl.video', '.owl-video-play-icon', $.proxy(function(e) {
@@ -2576,7 +2576,7 @@
 			}, this)
 		};
 
-		// register event handlers
+		// authen event handlers
 		this._core.$element.on(this._handlers);
 
 		// set default options
@@ -2802,7 +2802,7 @@
 		// set default options
 		this._core.options = $.extend({}, Navigation.Defaults, this._core.options);
 
-		// register event handlers
+		// authen event handlers
 		this.$element.on(this._handlers);
 	};
 
@@ -3144,10 +3144,10 @@
 		// set default options
 		this._core.options = $.extend({}, Hash.Defaults, this._core.options);
 
-		// register the event handlers
+		// authen the event handlers
 		this.$element.on(this._handlers);
 
-		// register event listener for hash navigation
+		// authen event listener for hash navigation
 		$(window).on('hashchange.owl.navigation', $.proxy(function(e) {
 			var hash = window.location.hash.substring(1),
 				items = this._core.$stage.children(),
