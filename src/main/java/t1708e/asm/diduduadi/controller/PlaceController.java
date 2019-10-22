@@ -16,4 +16,9 @@ public class PlaceController {
     public String layout(){
         return "fragment/layout";
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "")
+    public String list(){
+        return "place/list";
+    }
 }
