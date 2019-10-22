@@ -30,11 +30,19 @@
 <body>
 
 <div class="super_container">
-    <div th:replace="fragment/header :: header"></div>
+    <div th:replace="fragment/header :: header(title='PLACE')"></div> <!-- pass place name here -->
 
     <div layout:fragment="content">
-        <div class="blog">
+        <div class="blog" style="padding-top: 50px;">
             <div class="container">
+                <div class="intro" style="padding: 60px;">
+                    <div class="intro_title" style="color: black;">0q932 Warren Str
+<!--                        place address here -->
+                    </div>
+                    <div class="intro_text"> ladjfladjfa
+<!--                        place info here -->
+                    </div>
+                </div>
                 <div class="row">
 
                     <!-- Blog Content -->
