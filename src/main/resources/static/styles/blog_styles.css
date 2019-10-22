@@ -784,6 +784,12 @@ section
 	text-transform: uppercase;
 }
 
+.home_subtitle{
+	left: -10%;
+	right: -10%;
+	text-align: center;
+}
+
 /*********************************
 6. Blog
 *********************************/
