@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Travelix</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travelix Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../static/styles/bootstrap4/bootstrap.min.css"
+          th:href="@{/styles/bootstrap4/bootstrap.min.css}">
+    <link href="../../static/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+          th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/animate.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/styles/main_styles.css"
+          th:href="@{/styles/main_styles.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/styles/responsive.css"
+          th:href="@{/styles/responsive.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/authen-css/animate-custom.css"
+          th:href="@{/authen-css/animate-custom.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/authen-css/style.css"
+          th:href="@{/authen-css/style.css}" >
+</head>
+
+<body>
+
+<div class="super_container">
+    <!--header.html  that's here  -->
+    <header th:replace="fragment/header :: header">
+<!--        <div class="home">-->
+<!--            <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/blog_background.jpg"></div>-->
+<!--            <div class="home_content">-->
+<!--                <div class="home_title">the blog</div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </header>
+
+    <div layout:fragment="content">
+        <div class="listing">
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-12">-->
+<!--                        <div class="single_listing">-->
+<!--                            <div class="hotel_info">-->
+                                <h1 class="w3layouts agileits" style="color: #000;">TRAVEL AGENCY SIGN UP FORM</h1>
+
+                                <div class="container w3layouts agileits" style="margin: auto;">
+
+                                    <div class="content-left w3layouts agileits">
+                                        <img src="../../static/images/background.jpg"
+                                             th:src="@{/images/background.jpg}" alt="W3layouts Agileits">
+                                        <p>Plan your next dream trip. Select your destination and leave the rest to us.</p>
+                                        <a class="more w3layouts agileits" href="#">LEARN MORE</a>
+                                        <div class="list w3layouts agileits">
+                                            <ul class="w3layouts agileits">
+                                                <li class="w3layouts agileits"><a href="#">About</a></li>
+                                                <li class="li2 w3layouts agileits"><a href="#">Terms Of Use</a></li>
+                                                <li class="w3layouts agileits"><a href="#">Contact</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-right w3layouts agileits" style="height: 1000px;">
+                                    <section>
+                                        <div id="container_demo">
+                                            <a class="hiddenanchor w3layouts agileits" id="tologin"></a>
+                                            <a class="hiddenanchor w3layouts agileits" id="toregister"></a>
+                                            <div id="wrapper">
+                                                <div id="register" class="animate w3layouts agileits form">
+                                                    <h2>Sign up</h2>
+                                                    <form  action="#" autocomplete="on" method="post">
+                                                        <form action="#" method="post">
+                                                            <label>Full name</label>
+                                                            <input type="text" Name="name" required="">
+                                                            <label style="padding-right: 25px">Age </label>
+                                                            <input type="text" Name="age" required="">
+                                                            <label>Gender </label>
+                                                            <div class="col-sm-10" style="padding-top: 10px;">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="male" id="male" value="male" checked>
+                                                                    <label class="form-check-label" for="male">
+                                                                        Male
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="female" id="female" value="female">
+                                                                    <label class="form-check-label" for="female">
+                                                                        Female
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <label>Address</label>
+                                                            <input type="text" Name="address">
+                                                            <label>Username</label>
+                                                            <input type="text" Name="username" required="">
+                                                            <label style="padding-right: 5px">E-mail </label>
+                                                            <input type="text" Name="email" required="">
+                                                            <label>Password</label>
+                                                            <input type="password" Name="password" required="">
+                                                            <label style="padding-right: 15px">Role? </label>
+                                                            <div class="col-sm-10" style="padding-top: 10px;">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="guide" id="guide" value="guide" checked>
+                                                                    <label class="form-check-label" for="guide">
+                                                                        Guide
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="traveller" id="traveller" value="traveller">
+                                                                    <label class="form-check-label" for="traveller">
+                                                                        Traveller
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="send-button w3layouts agileits">
+                                                                <form action="#" method="post">
+                                                                    <input type="submit" value="SIGN UP">
+                                                                </form>
+                                                            </div>
+                                                        </form>
+                                                        <p class="change_link w3layouts agileits">
+                                                            Already a member?
+                                                            <a th:href="@{login}" class="to_register">Sign In</a>
+<!--                                                            <a href="#tologin" class="to_register">Sign In</a>-->
+                                                        </p>
+                                                        <div class="clear"></div>
+                                                    </form>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    </div>
+                                    <div class="clear"></div>
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+    </div>
+    <!--footer.html  that's here  -->
+    <div th:replace="fragment/footer :: footer" style="padding-left: 0px; padding-top: 20px;"></div>
+</div>
+
+<script src="../../static/js/jquery-3.2.1.min.js"
+        th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script src="../../static/styles/bootstrap4/popper.js"
+        th:src="@{/styles/bootstrap4/popper.js}"></script>
+<script src="../../static/styles/bootstrap4/bootstrap.min.js"
+        th:src="@{/styles/bootstrap4/bootstrap.min.js}"></script>
+<script src="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"
+        th:src="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+<script src="../../static/plugins/easing/easing.js"
+        th:src="@{/plugins/easing/easing.js}"></script>
+<script src="../../static/js/custom.js"
+        th:src="@{/js/custom.js}"></script>
+
+</body>
+
+</html>

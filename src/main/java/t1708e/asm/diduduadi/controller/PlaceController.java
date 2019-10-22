@@ -19,4 +19,9 @@ public class PlaceController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/create")
     public String create(){ return "place/form"; }
+  
+    @RequestMapping(method = RequestMethod.GET, value = "")
+    public String list(){
+        return "place/list";
+    }
 }

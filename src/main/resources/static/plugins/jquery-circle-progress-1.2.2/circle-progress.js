@@ -11,7 +11,7 @@
 // Uses AMD, CommonJS or browser globals to create a jQuery plugin.
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
-    // AMD - register as an anonymous module
+    // AMD - authen as an anonymous module
     define(['jquery'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // Node/CommonJS
