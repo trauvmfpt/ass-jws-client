@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/register")
 public class RegisterController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/register")
+    @RequestMapping(method = RequestMethod.GET, value = "")
     public String register(){
-        return "register/register";
+        return "authen/register";
     }
 
 //    @RequestMapping(method = RequestMethod.POST, value = "/create")
