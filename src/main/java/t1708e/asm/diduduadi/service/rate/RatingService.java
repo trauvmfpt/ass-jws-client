@@ -8,9 +8,9 @@
 package t1708e.asm.diduduadi.service.rate;
 
 public interface RatingService extends java.rmi.Remote {
-    public boolean update(Rating arg0) throws java.rmi.RemoteException;
+    public boolean update(t1708e.asm.diduduadi.service.rate.Rating arg0) throws java.rmi.RemoteException;
     public boolean delete(t1708e.asm.diduduadi.service.rate.User arg0) throws java.rmi.RemoteException;
-    public boolean create(Rating arg0) throws java.rmi.RemoteException;
-    public Rating[] getAll() throws java.rmi.RemoteException;
-    public Rating getByUserIdAndPostId(int arg0, int arg1) throws java.rmi.RemoteException;
+    public boolean create(t1708e.asm.diduduadi.service.rate.Rating arg0) throws java.rmi.RemoteException;
+    public t1708e.asm.diduduadi.service.rate.Rating[] getAll() throws java.rmi.RemoteException;
+    public t1708e.asm.diduduadi.service.rate.Rating getByUserIdAndPostId(int arg0, int arg1) throws java.rmi.RemoteException;
 }
