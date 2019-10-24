@@ -33,7 +33,7 @@ public class PlaceController {
     @RequestMapping(method = RequestMethod.POST, value = "/create")
     public String store(t1708e.asm.diduduadi.service.place.Place place, BindingResult bindingResult) throws RemoteException {
         placeService.createPlace(place);
-        return "redirect:/list/";
+        return "redirect:/place/list/";
 }
   
     @RequestMapping(method = RequestMethod.GET, value = "/list")
