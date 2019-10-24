@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Travelix</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travelix Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../static/styles/bootstrap4/bootstrap.min.css"
+          th:href="@{/styles/bootstrap4/bootstrap.min.css}">
+    <link href="../../static/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+          th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/animate.css"
+          th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}">
+    <link rel="stylesheet" type="text/css" href="../../static/styles/main_styles.css"
+          th:href="@{/styles/main_styles.css}">
+    <link rel="stylesheet" type="text/css" href="../../static/styles/responsive.css"
+          th:href="@{/styles/responsive.css}">
+</head>
+
+<body>
+
+<div class="super_container">
+    <!--header.html  that's here  -->
+    <div th:replace="fragment/header :: header"></div>
+
+    <div layout:fragment="content">
+
+        <div class="container">
+
+            <!-- List Place -->
+            <div class="offers">
+                <div class="offers">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h2 class="section_title">The Place you want to come</h2>
+                            </div>
+                        </div>
+                        <div class="row offers_items">
+                            <!-- Offers Item -->
+                            <div th:each="place : ${places}" class="col-lg-6 offers_col">
+                                <div class="offers_item">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="offers_image_container">
+                                                <!-- Image by https://unsplash.com/@kensuarez -->
+                                                <div class="offers_image_background"
+                                                     style="background-image:url(images/offer_1.jpg)"></div>
+                                                <div class="offer_name"><a href="#" th:text="${place.address}"></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="offers_content">
+                                                <div class="offers_price" th:text="${place.name}"><span></span></div>
+                                                <div class="rating_r rating_r_4 offers_rating">
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                </div>
+                                                <p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem
+                                                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
+                                                    convallis tortor.</p>
+                                                <div class="offers_icons">
+                                                    <ul class="offers_icons_list">
+                                                        <li class="offers_icons_item"><img src="images/post.png" alt="">
+                                                        </li>
+                                                        <li class="offers_icons_item"><img src="images/compass.png"
+                                                                                           alt=""></li>
+                                                        <li class="offers_icons_item"><img src="images/bicycle.png"
+                                                                                           alt=""></li>
+                                                        <li class="offers_icons_item"><img src="images/sailboat.png"
+                                                                                           alt=""></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="offers_link"><a href="offers.html">Show Posts</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- List Post -->
+            <div class="offers">
+                <div class="offers">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h2 class="section_title">The Post you want to come</h2>
+                            </div>
+                        </div>
+                        <div class="row offers_items">
+                            <div th:if="${posts.size() == 0}">
+                                <h2>Sorry, you found nothing</h2>
+                            </div>
+                            <!-- Offers Item -->
+                            <div th:each="post : ${posts}" class="col-lg-6 offers_col">
+                                <div class="offers_item">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="offers_image_container">
+                                                <!-- Image by https://unsplash.com/@kensuarez -->
+                                                <div class="offers_image_background"
+                                                     style="background-image:url(images/offer_1.jpg)"></div>
+                                                <div class="offer_name"><a href="#" th:text="${post.place.name}"></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="offers_content">
+                                                <div class="offers_price" th:text="${post.place.address}"><span></span></div>
+                                                <div class="rating_r rating_r_4 offers_rating">
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                </div>
+                                                <p class="offers_text" th:text="${post.info}"></p>
+                                                <div class="offers_icons">
+                                                    <ul class="offers_icons_list">
+                                                        <li class="offers_icons_item"><img src="images/post.png" alt="">
+                                                        </li>
+                                                        <li class="offers_icons_item"><img src="images/compass.png"
+                                                                                           alt=""></li>
+                                                        <li class="offers_icons_item"><img src="images/bicycle.png"
+                                                                                           alt=""></li>
+                                                        <li class="offers_icons_item"><img src="images/sailboat.png"
+                                                                                           alt=""></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="offers_link"><a href="offers.html">Detail</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--footer.html  that's here  -->
+            <div th:replace="fragment/footer :: footer"></div>
+        </div>
+
+        <script src="../../static/js/jquery-3.2.1.min.js"
+                th:src="@{/js/jquery-3.2.1.min.js}"></script>
+        <script src="../../static/styles/bootstrap4/popper.js"
+                th:src="@{/styles/bootstrap4/popper.js}"></script>
+        <script src="../../static/styles/bootstrap4/bootstrap.min.js"
+                th:src="@{/styles/bootstrap4/bootstrap.min.js}"></script>
+        <script src="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"
+                th:src="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+        <script src="../../static/plugins/easing/easing.js"
+                th:src="@{/plugins/easing/easing.js}"></script>
+        <script src="../../static/js/custom.js"
+                th:src="@{/js/custom.js}"></script>
+
+</body>
+
+</html>
