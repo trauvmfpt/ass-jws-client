@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import t1708e.asm.diduduadi.service.user.User;
+import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.user.UserService;
 
 import java.rmi.RemoteException;

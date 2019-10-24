@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import t1708e.asm.diduduadi.service.search.Place;
-import t1708e.asm.diduduadi.service.search.Post;
+import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.search.SearchService;
 
 import java.rmi.RemoteException;
