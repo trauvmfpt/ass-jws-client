@@ -74,63 +74,64 @@
                                             <div id="wrapper">
                                                 <div id="register" class="animate w3layouts agileits form">
                                                     <h2>Sign up</h2>
-                                                    <form  action="#" autocomplete="on" method="post">
-                                                        <form action="#" method="post">
+                                                        <form th:action="@{/register}" th:method="post" th:object="${user}">
                                                             <label>Full name</label>
-                                                            <input type="text" Name="name" required="">
+                                                            <input type="text" th:field="*{name}" required>
                                                             <label style="padding-right: 25px">Age </label>
-                                                            <input type="text" Name="age" required="">
+                                                            <input type="text" th:field="*{age}">
                                                             <label>Gender </label>
                                                             <div class="col-sm-10" style="padding-top: 10px;">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="male" id="male" value="male" checked>
+                                                                    <input class="form-check-input" th:field="*{gender}" type="radio" id="male" value="1">
                                                                     <label class="form-check-label" for="male">
                                                                         Male
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="female" id="female" value="female">
+                                                                    <input class="form-check-input" th:field="*{gender}" type="radio" id="female" value="2">
                                                                     <label class="form-check-label" for="female">
                                                                         Female
                                                                     </label>
                                                                 </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" th:field="*{gender}" type="radio"id="other" value="0">
+                                                                    <label class="form-check-label" for="other">
+                                                                        Other
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                             <label>Address</label>
-                                                            <input type="text" Name="address">
+                                                            <input type="text" th:field="*{address}">
                                                             <label>Username</label>
-                                                            <input type="text" Name="username" required="">
+                                                            <input type="text" th:field="*{username}">
                                                             <label style="padding-right: 5px">E-mail </label>
-                                                            <input type="text" Name="email" required="">
+                                                            <input type="text"  th:field="*{email}">
                                                             <label>Password</label>
-                                                            <input type="password" Name="password" required="">
+                                                            <input type="password" th:field="*{password}">
                                                             <label style="padding-right: 15px">Role? </label>
                                                             <div class="col-sm-10" style="padding-top: 10px;">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="guide" id="guide" value="guide" checked>
+                                                                    <input class="form-check-input" type="radio" name="roleIds" id="guide" value="1" checked>
                                                                     <label class="form-check-label" for="guide">
                                                                         Guide
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="traveller" id="traveller" value="traveller">
+                                                                    <input class="form-check-input" name="roleIds" type="radio" id="traveller" value="2">
                                                                     <label class="form-check-label" for="traveller">
                                                                         Traveller
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                             <div class="send-button w3layouts agileits">
-                                                                <form action="#" method="post">
                                                                     <input type="submit" value="SIGN UP">
-                                                                </form>
                                                             </div>
                                                         </form>
                                                         <p class="change_link w3layouts agileits">
                                                             Already a member?
-                                                            <a th:href="@{login}" class="to_register">Sign In</a>
-<!--                                                            <a href="#tologin" class="to_register">Sign In</a>-->
+                                                            <a th:href="@{/login}" class="to_register">Sign In</a>
                                                         </p>
                                                         <div class="clear"></div>
-                                                    </form>
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>
