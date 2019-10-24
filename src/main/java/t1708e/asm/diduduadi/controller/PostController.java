@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.place.PlaceService;
-import t1708e.asm.diduduadi.service.post.Image;
-import t1708e.asm.diduduadi.service.post.Post;
 import t1708e.asm.diduduadi.service.post.PostService;
 import t1708e.asm.diduduadi.util.CloudinaryUtil;
 
@@ -44,7 +43,7 @@ public class PostController {
                         @RequestParam("placeId") int placeId) throws RemoteException {
         //get Place
         Place place = placeService.detailPlace(placeId);
-        t1708e.asm.diduduadi.service.post.Place placePost = new t1708e.asm.diduduadi.service.post.Place();
+        Place placePost = new Place();
         placePost.setId(place.getId());
         placePost.setName(place.getName());
         placePost.setAddress(place.getAddress());
