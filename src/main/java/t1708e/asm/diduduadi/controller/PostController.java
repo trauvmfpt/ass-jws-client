@@ -70,6 +70,6 @@ public class PostController {
             post.setImageSet(imageList.toArray(new Image[0]));
         }
         postService.createPost(post);
-        return "redirect"
+        return "redirect:/";
     }
 }
