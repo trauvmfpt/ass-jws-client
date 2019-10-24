@@ -4,61 +4,61 @@
 <xsd:import namespace="http://service/" schemaLocation="http://23.96.248.50:9000/post?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-<message name="getAll">
-<part name="parameters" element="tns:getAll"></part>
+<message name="getAllPost">
+<part name="parameters" element="tns:getAllPost"></part>
 </message>
-<message name="getAllResponse">
-<part name="parameters" element="tns:getAllResponse"></part>
+<message name="getAllPostResponse">
+<part name="parameters" element="tns:getAllPostResponse"></part>
 </message>
-<message name="getById">
-<part name="parameters" element="tns:getById"></part>
+<message name="getByIdPost">
+<part name="parameters" element="tns:getByIdPost"></part>
 </message>
-<message name="getByIdResponse">
-<part name="parameters" element="tns:getByIdResponse"></part>
+<message name="getByIdPostResponse">
+<part name="parameters" element="tns:getByIdPostResponse"></part>
 </message>
-<message name="update">
-<part name="parameters" element="tns:update"></part>
+<message name="updatePost">
+<part name="parameters" element="tns:updatePost"></part>
 </message>
-<message name="updateResponse">
-<part name="parameters" element="tns:updateResponse"></part>
+<message name="updatePostResponse">
+<part name="parameters" element="tns:updatePostResponse"></part>
 </message>
-<message name="delete">
-<part name="parameters" element="tns:delete"></part>
+<message name="deletePost">
+<part name="parameters" element="tns:deletePost"></part>
 </message>
-<message name="deleteResponse">
-<part name="parameters" element="tns:deleteResponse"></part>
+<message name="deletePostResponse">
+<part name="parameters" element="tns:deletePostResponse"></part>
 </message>
-<message name="create">
-<part name="parameters" element="tns:create"></part>
+<message name="createPost">
+<part name="parameters" element="tns:createPost"></part>
 </message>
-<message name="createResponse">
-<part name="parameters" element="tns:createResponse"></part>
+<message name="createPostResponse">
+<part name="parameters" element="tns:createPostResponse"></part>
 </message>
 <portType name="PostService">
-<operation name="getAll">
-<input wsam:Action="http://service/PostService/getAllRequest" message="tns:getAll"></input>
-<output wsam:Action="http://service/PostService/getAllResponse" message="tns:getAllResponse"></output>
+<operation name="getAllPost">
+<input wsam:Action="http://service/PostService/getAllPostRequest" message="tns:getAllPost"></input>
+<output wsam:Action="http://service/PostService/getAllPostResponse" message="tns:getAllPostResponse"></output>
 </operation>
-<operation name="getById">
-<input wsam:Action="http://service/PostService/getByIdRequest" message="tns:getById"></input>
-<output wsam:Action="http://service/PostService/getByIdResponse" message="tns:getByIdResponse"></output>
+<operation name="getByIdPost">
+<input wsam:Action="http://service/PostService/getByIdPostRequest" message="tns:getByIdPost"></input>
+<output wsam:Action="http://service/PostService/getByIdPostResponse" message="tns:getByIdPostResponse"></output>
 </operation>
-<operation name="update">
-<input wsam:Action="http://service/PostService/updateRequest" message="tns:update"></input>
-<output wsam:Action="http://service/PostService/updateResponse" message="tns:updateResponse"></output>
+<operation name="updatePost">
+<input wsam:Action="http://service/PostService/updatePostRequest" message="tns:updatePost"></input>
+<output wsam:Action="http://service/PostService/updatePostResponse" message="tns:updatePostResponse"></output>
 </operation>
-<operation name="delete">
-<input wsam:Action="http://service/PostService/deleteRequest" message="tns:delete"></input>
-<output wsam:Action="http://service/PostService/deleteResponse" message="tns:deleteResponse"></output>
+<operation name="deletePost">
+<input wsam:Action="http://service/PostService/deletePostRequest" message="tns:deletePost"></input>
+<output wsam:Action="http://service/PostService/deletePostResponse" message="tns:deletePostResponse"></output>
 </operation>
-<operation name="create">
-<input wsam:Action="http://service/PostService/createRequest" message="tns:create"></input>
-<output wsam:Action="http://service/PostService/createResponse" message="tns:createResponse"></output>
+<operation name="createPost">
+<input wsam:Action="http://service/PostService/createPostRequest" message="tns:createPost"></input>
+<output wsam:Action="http://service/PostService/createPostResponse" message="tns:createPostResponse"></output>
 </operation>
 </portType>
 <binding name="PostServicePortBinding" type="tns:PostService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="getAll">
+<operation name="getAllPost">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -67,7 +67,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="getById">
+<operation name="getByIdPost">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -76,7 +76,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="update">
+<operation name="updatePost">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -85,7 +85,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="delete">
+<operation name="deletePost">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -94,7 +94,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="create">
+<operation name="createPost">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

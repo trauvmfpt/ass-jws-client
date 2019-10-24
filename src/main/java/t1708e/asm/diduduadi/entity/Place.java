@@ -14,7 +14,7 @@ public class Place  implements java.io.Serializable {
 
     private java.lang.String name;
 
-    private Post[] postSet;
+    private t1708e.asm.diduduadi.entity.Post[] postSet;
 
     private int status;
 
@@ -25,7 +25,7 @@ public class Place  implements java.io.Serializable {
            java.lang.String address,
            int id,
            java.lang.String name,
-           Post[] postSet,
+           t1708e.asm.diduduadi.entity.Post[] postSet,
            int status) {
            this.address = address;
            this.id = id;
@@ -100,7 +100,7 @@ public class Place  implements java.io.Serializable {
      * 
      * @return postSet
      */
-    public Post[] getPostSet() {
+    public t1708e.asm.diduduadi.entity.Post[] getPostSet() {
         return postSet;
     }
 
@@ -110,15 +110,15 @@ public class Place  implements java.io.Serializable {
      * 
      * @param postSet
      */
-    public void setPostSet(Post[] postSet) {
+    public void setPostSet(t1708e.asm.diduduadi.entity.Post[] postSet) {
         this.postSet = postSet;
     }
 
-    public Post getPostSet(int i) {
+    public t1708e.asm.diduduadi.entity.Post getPostSet(int i) {
         return this.postSet[i];
     }
 
-    public void setPostSet(int i, Post _value) {
+    public void setPostSet(int i, t1708e.asm.diduduadi.entity.Post _value) {
         this.postSet[i] = _value;
     }
 

@@ -7,10 +7,12 @@
 
 package t1708e.asm.diduduadi.service.post;
 
+import t1708e.asm.diduduadi.entity.Post;
+
 public interface PostService extends java.rmi.Remote {
-    public t1708e.asm.diduduadi.service.post.Rating[] getAll() throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.post.Image getById(int arg0) throws java.rmi.RemoteException;
-    public boolean update(t1708e.asm.diduduadi.service.post.Rating arg0) throws java.rmi.RemoteException;
-    public boolean delete(t1708e.asm.diduduadi.service.post.User arg0) throws java.rmi.RemoteException;
-    public boolean create(t1708e.asm.diduduadi.service.post.Rating arg0) throws java.rmi.RemoteException;
+    public Post[] getAllPost() throws java.rmi.RemoteException;
+    public Post getByIdPost(int arg0) throws java.rmi.RemoteException;
+    public boolean updatePost(Post arg0) throws java.rmi.RemoteException;
+    public boolean deletePost(Post arg0) throws java.rmi.RemoteException;
+    public boolean createPost(Post arg0) throws java.rmi.RemoteException;
 }

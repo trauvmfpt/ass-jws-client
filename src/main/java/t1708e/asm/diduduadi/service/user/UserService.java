@@ -7,11 +7,13 @@
 
 package t1708e.asm.diduduadi.service.user;
 
+import t1708e.asm.diduduadi.entity.User;
+
 public interface UserService extends java.rmi.Remote {
-    public t1708e.asm.diduduadi.service.user.User detail(int arg0) throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.user.User[] getList() throws java.rmi.RemoteException;
-    public boolean updateUser(t1708e.asm.diduduadi.service.user.User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.user.User login(t1708e.asm.diduduadi.service.user.User arg0) throws java.rmi.RemoteException;
-    public boolean createUser(t1708e.asm.diduduadi.service.user.User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException, t1708e.asm.diduduadi.service.user.InvalidKeySpecException, t1708e.asm.diduduadi.service.user.NoSuchAlgorithmException;
-    public boolean delete(t1708e.asm.diduduadi.service.user.User arg0) throws java.rmi.RemoteException;
+    public User detail(int arg0) throws java.rmi.RemoteException;
+    public User[] getList() throws java.rmi.RemoteException;
+    public boolean updateUser(User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException;
+    public User login(User arg0) throws java.rmi.RemoteException;
+    public boolean createUser(User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException, InvalidKeySpecException, NoSuchAlgorithmException;
+    public boolean delete(User arg0) throws java.rmi.RemoteException;
 }

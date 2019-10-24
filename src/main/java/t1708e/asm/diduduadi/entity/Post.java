@@ -8,34 +8,34 @@
 package t1708e.asm.diduduadi.entity;
 
 public class Post  implements java.io.Serializable {
-    private Comment[] commentSet;
+    private t1708e.asm.diduduadi.entity.Comment[] commentSet;
 
     private int id;
 
-    private Image[] imageSet;
+    private t1708e.asm.diduduadi.entity.Image[] imageSet;
 
     private java.lang.String info;
 
-    private Place place;
+    private t1708e.asm.diduduadi.entity.Place place;
 
-    private Rating[] ratingSet;
+    private t1708e.asm.diduduadi.entity.Rating[] ratingSet;
 
     private int status;
 
-    private User user;
+    private t1708e.asm.diduduadi.entity.User user;
 
     public Post() {
     }
 
     public Post(
-           Comment[] commentSet,
+           t1708e.asm.diduduadi.entity.Comment[] commentSet,
            int id,
-           Image[] imageSet,
+           t1708e.asm.diduduadi.entity.Image[] imageSet,
            java.lang.String info,
-           Place place,
-           Rating[] ratingSet,
+           t1708e.asm.diduduadi.entity.Place place,
+           t1708e.asm.diduduadi.entity.Rating[] ratingSet,
            int status,
-           User user) {
+           t1708e.asm.diduduadi.entity.User user) {
            this.commentSet = commentSet;
            this.id = id;
            this.imageSet = imageSet;
@@ -52,7 +52,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @return commentSet
      */
-    public Comment[] getCommentSet() {
+    public t1708e.asm.diduduadi.entity.Comment[] getCommentSet() {
         return commentSet;
     }
 
@@ -62,15 +62,15 @@ public class Post  implements java.io.Serializable {
      * 
      * @param commentSet
      */
-    public void setCommentSet(Comment[] commentSet) {
+    public void setCommentSet(t1708e.asm.diduduadi.entity.Comment[] commentSet) {
         this.commentSet = commentSet;
     }
 
-    public Comment getCommentSet(int i) {
+    public t1708e.asm.diduduadi.entity.Comment getCommentSet(int i) {
         return this.commentSet[i];
     }
 
-    public void setCommentSet(int i, Comment _value) {
+    public void setCommentSet(int i, t1708e.asm.diduduadi.entity.Comment _value) {
         this.commentSet[i] = _value;
     }
 
@@ -100,7 +100,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @return imageSet
      */
-    public Image[] getImageSet() {
+    public t1708e.asm.diduduadi.entity.Image[] getImageSet() {
         return imageSet;
     }
 
@@ -110,15 +110,15 @@ public class Post  implements java.io.Serializable {
      * 
      * @param imageSet
      */
-    public void setImageSet(Image[] imageSet) {
+    public void setImageSet(t1708e.asm.diduduadi.entity.Image[] imageSet) {
         this.imageSet = imageSet;
     }
 
-    public Image getImageSet(int i) {
+    public t1708e.asm.diduduadi.entity.Image getImageSet(int i) {
         return this.imageSet[i];
     }
 
-    public void setImageSet(int i, Image _value) {
+    public void setImageSet(int i, t1708e.asm.diduduadi.entity.Image _value) {
         this.imageSet[i] = _value;
     }
 
@@ -148,7 +148,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @return place
      */
-    public Place getPlace() {
+    public t1708e.asm.diduduadi.entity.Place getPlace() {
         return place;
     }
 
@@ -158,7 +158,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @param place
      */
-    public void setPlace(Place place) {
+    public void setPlace(t1708e.asm.diduduadi.entity.Place place) {
         this.place = place;
     }
 
@@ -168,7 +168,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @return ratingSet
      */
-    public Rating[] getRatingSet() {
+    public t1708e.asm.diduduadi.entity.Rating[] getRatingSet() {
         return ratingSet;
     }
 
@@ -178,15 +178,15 @@ public class Post  implements java.io.Serializable {
      * 
      * @param ratingSet
      */
-    public void setRatingSet(Rating[] ratingSet) {
+    public void setRatingSet(t1708e.asm.diduduadi.entity.Rating[] ratingSet) {
         this.ratingSet = ratingSet;
     }
 
-    public Rating getRatingSet(int i) {
+    public t1708e.asm.diduduadi.entity.Rating getRatingSet(int i) {
         return this.ratingSet[i];
     }
 
-    public void setRatingSet(int i, Rating _value) {
+    public void setRatingSet(int i, t1708e.asm.diduduadi.entity.Rating _value) {
         this.ratingSet[i] = _value;
     }
 
@@ -216,7 +216,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @return user
      */
-    public User getUser() {
+    public t1708e.asm.diduduadi.entity.User getUser() {
         return user;
     }
 
@@ -226,7 +226,7 @@ public class Post  implements java.io.Serializable {
      * 
      * @param user
      */
-    public void setUser(User user) {
+    public void setUser(t1708e.asm.diduduadi.entity.User user) {
         this.user = user;
     }
 

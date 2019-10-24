@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.place.PlaceServiceServiceLocator;
+import t1708e.asm.diduduadi.service.post.PostService;
+import t1708e.asm.diduduadi.service.post.PostServiceServiceLocator;
 
 import javax.xml.rpc.ServiceException;
 
@@ -15,5 +17,12 @@ public class ServiceConfig {
         PlaceServiceServiceLocator locator = new PlaceServiceServiceLocator();
         PlaceService placeService = locator.getPlaceServicePort();
         return placeService;
+    }
+
+    @Bean
+    PostService postService() throws ServiceException {
+        PostServiceServiceLocator locator = new PostServiceServiceLocator();
+        PostService postService = locator.getPostServicePort();
+        return postService;
     }
 }

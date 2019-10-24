@@ -26,7 +26,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAll");
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "rating"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.image.Rating[].class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.Rating[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -37,7 +37,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "image"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.image.Image.class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.Image.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -45,7 +45,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("update");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "rating"), t1708e.asm.diduduadi.service.image.Rating.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "rating"), t1708e.asm.diduduadi.entity.Rating.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -57,7 +57,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delete");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "user"), t1708e.asm.diduduadi.service.image.User.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "user"), t1708e.asm.diduduadi.entity.User.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -69,7 +69,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("create");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "rating"), t1708e.asm.diduduadi.service.image.Rating.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "rating"), t1708e.asm.diduduadi.entity.Rating.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -112,49 +112,49 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Comment.class;
+            cls = t1708e.asm.diduduadi.entity.Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Image.class;
+            cls = t1708e.asm.diduduadi.entity.Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Place.class;
+            cls = t1708e.asm.diduduadi.entity.Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Post.class;
+            cls = t1708e.asm.diduduadi.entity.Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Rating.class;
+            cls = t1708e.asm.diduduadi.entity.Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.Role.class;
+            cls = t1708e.asm.diduduadi.entity.Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.image.User.class;
+            cls = t1708e.asm.diduduadi.entity.User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -225,7 +225,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         }
     }
 
-    public t1708e.asm.diduduadi.service.image.Rating[] getAll() throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.Rating[] getAll() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -249,9 +249,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.image.Rating[]) _resp;
+                return (t1708e.asm.diduduadi.entity.Rating[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.image.Rating[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.image.Rating[].class);
+                return (t1708e.asm.diduduadi.entity.Rating[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Rating[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -259,7 +259,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public t1708e.asm.diduduadi.service.image.Image getById(int arg0) throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.Image getById(int arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -283,9 +283,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.image.Image) _resp;
+                return (t1708e.asm.diduduadi.entity.Image) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.image.Image) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.image.Image.class);
+                return (t1708e.asm.diduduadi.entity.Image) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Image.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -293,7 +293,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean update(t1708e.asm.diduduadi.service.image.Rating arg0) throws java.rmi.RemoteException {
+    public boolean update(t1708e.asm.diduduadi.entity.Rating arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -327,7 +327,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean delete(t1708e.asm.diduduadi.service.image.User arg0) throws java.rmi.RemoteException {
+    public boolean delete(t1708e.asm.diduduadi.entity.User arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -361,7 +361,7 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean create(t1708e.asm.diduduadi.service.image.Rating arg0) throws java.rmi.RemoteException {
+    public boolean create(t1708e.asm.diduduadi.entity.Rating arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

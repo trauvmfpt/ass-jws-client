@@ -28,7 +28,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "user"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.comment.User.class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.User.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -37,7 +37,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getList");
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "user"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.comment.User[].class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.User[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -45,7 +45,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateComment");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "comment"), t1708e.asm.diduduadi.service.comment.Comment.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "comment"), t1708e.asm.diduduadi.entity.Comment.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -59,7 +59,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createComment");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "comment"), t1708e.asm.diduduadi.service.comment.Comment.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "comment"), t1708e.asm.diduduadi.entity.Comment.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -102,49 +102,49 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Comment.class;
+            cls = t1708e.asm.diduduadi.entity.Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Image.class;
+            cls = t1708e.asm.diduduadi.entity.Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Place.class;
+            cls = t1708e.asm.diduduadi.entity.Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Post.class;
+            cls = t1708e.asm.diduduadi.entity.Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Rating.class;
+            cls = t1708e.asm.diduduadi.entity.Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.Role.class;
+            cls = t1708e.asm.diduduadi.entity.Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.comment.User.class;
+            cls = t1708e.asm.diduduadi.entity.User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -215,7 +215,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
         }
     }
 
-    public t1708e.asm.diduduadi.service.comment.User detail(int arg0) throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.User detail(int arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -239,9 +239,9 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.comment.User) _resp;
+                return (t1708e.asm.diduduadi.entity.User) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.comment.User) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.comment.User.class);
+                return (t1708e.asm.diduduadi.entity.User) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.User.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -249,7 +249,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
 }
     }
 
-    public t1708e.asm.diduduadi.service.comment.User[] getList() throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.User[] getList() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -273,9 +273,9 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.comment.User[]) _resp;
+                return (t1708e.asm.diduduadi.entity.User[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.comment.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.comment.User[].class);
+                return (t1708e.asm.diduduadi.entity.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.User[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -283,7 +283,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
 }
     }
 
-    public boolean updateComment(t1708e.asm.diduduadi.service.comment.Comment arg0, int arg1) throws java.rmi.RemoteException {
+    public boolean updateComment(t1708e.asm.diduduadi.entity.Comment arg0, int arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -317,7 +317,7 @@ public class CommentServicePortBindingStub extends org.apache.axis.client.Stub i
 }
     }
 
-    public boolean createComment(t1708e.asm.diduduadi.service.comment.Comment arg0) throws java.rmi.RemoteException {
+    public boolean createComment(t1708e.asm.diduduadi.entity.Comment arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

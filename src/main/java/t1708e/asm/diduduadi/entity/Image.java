@@ -8,13 +8,13 @@
 package t1708e.asm.diduduadi.entity;
 
 public class Image  implements java.io.Serializable {
-    private Comment[] commentSet;
+    private t1708e.asm.diduduadi.entity.Comment[] commentSet;
 
     private int id;
 
-    private Post post;
+    private t1708e.asm.diduduadi.entity.Post post;
 
-    private Rating[] ratingSet;
+    private t1708e.asm.diduduadi.entity.Rating[] ratingSet;
 
     private java.lang.String source;
 
@@ -24,10 +24,10 @@ public class Image  implements java.io.Serializable {
     }
 
     public Image(
-           Comment[] commentSet,
+           t1708e.asm.diduduadi.entity.Comment[] commentSet,
            int id,
-           Post post,
-           Rating[] ratingSet,
+           t1708e.asm.diduduadi.entity.Post post,
+           t1708e.asm.diduduadi.entity.Rating[] ratingSet,
            java.lang.String source,
            int status) {
            this.commentSet = commentSet;
@@ -44,7 +44,7 @@ public class Image  implements java.io.Serializable {
      * 
      * @return commentSet
      */
-    public Comment[] getCommentSet() {
+    public t1708e.asm.diduduadi.entity.Comment[] getCommentSet() {
         return commentSet;
     }
 
@@ -54,15 +54,15 @@ public class Image  implements java.io.Serializable {
      * 
      * @param commentSet
      */
-    public void setCommentSet(Comment[] commentSet) {
+    public void setCommentSet(t1708e.asm.diduduadi.entity.Comment[] commentSet) {
         this.commentSet = commentSet;
     }
 
-    public Comment getCommentSet(int i) {
+    public t1708e.asm.diduduadi.entity.Comment getCommentSet(int i) {
         return this.commentSet[i];
     }
 
-    public void setCommentSet(int i, Comment _value) {
+    public void setCommentSet(int i, t1708e.asm.diduduadi.entity.Comment _value) {
         this.commentSet[i] = _value;
     }
 
@@ -92,7 +92,7 @@ public class Image  implements java.io.Serializable {
      * 
      * @return post
      */
-    public Post getPost() {
+    public t1708e.asm.diduduadi.entity.Post getPost() {
         return post;
     }
 
@@ -102,7 +102,7 @@ public class Image  implements java.io.Serializable {
      * 
      * @param post
      */
-    public void setPost(Post post) {
+    public void setPost(t1708e.asm.diduduadi.entity.Post post) {
         this.post = post;
     }
 
@@ -112,7 +112,7 @@ public class Image  implements java.io.Serializable {
      * 
      * @return ratingSet
      */
-    public Rating[] getRatingSet() {
+    public t1708e.asm.diduduadi.entity.Rating[] getRatingSet() {
         return ratingSet;
     }
 
@@ -122,15 +122,15 @@ public class Image  implements java.io.Serializable {
      * 
      * @param ratingSet
      */
-    public void setRatingSet(Rating[] ratingSet) {
+    public void setRatingSet(t1708e.asm.diduduadi.entity.Rating[] ratingSet) {
         this.ratingSet = ratingSet;
     }
 
-    public Rating getRatingSet(int i) {
+    public t1708e.asm.diduduadi.entity.Rating getRatingSet(int i) {
         return this.ratingSet[i];
     }
 
-    public void setRatingSet(int i, Rating _value) {
+    public void setRatingSet(int i, t1708e.asm.diduduadi.entity.Rating _value) {
         this.ratingSet[i] = _value;
     }
 

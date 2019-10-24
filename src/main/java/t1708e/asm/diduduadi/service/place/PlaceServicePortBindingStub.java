@@ -25,7 +25,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createPlace");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.service.place.Place.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.entity.Place.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -40,7 +40,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.place.Place.class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.Place.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -48,7 +48,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatePlace");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.service.place.Place.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.entity.Place.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -63,7 +63,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getListPlace");
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.place.Place[].class);
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.Place[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -102,49 +102,49 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Comment.class;
+            cls = t1708e.asm.diduduadi.entity.Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Image.class;
+            cls = t1708e.asm.diduduadi.entity.Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Place.class;
+            cls = t1708e.asm.diduduadi.entity.Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Post.class;
+            cls = t1708e.asm.diduduadi.entity.Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Rating.class;
+            cls = t1708e.asm.diduduadi.entity.Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Role.class;
+            cls = t1708e.asm.diduduadi.entity.Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.User.class;
+            cls = t1708e.asm.diduduadi.entity.User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -215,7 +215,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         }
     }
 
-    public boolean createPlace(t1708e.asm.diduduadi.service.place.Place arg0) throws java.rmi.RemoteException {
+    public boolean createPlace(t1708e.asm.diduduadi.entity.Place arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -249,7 +249,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public t1708e.asm.diduduadi.service.place.Place detailPlace(int arg0) throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.Place detailPlace(int arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -273,9 +273,9 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.place.Place) _resp;
+                return (t1708e.asm.diduduadi.entity.Place) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.place.Place) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.place.Place.class);
+                return (t1708e.asm.diduduadi.entity.Place) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Place.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -283,7 +283,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean updatePlace(t1708e.asm.diduduadi.service.place.Place arg0, int arg1) throws java.rmi.RemoteException {
+    public boolean updatePlace(t1708e.asm.diduduadi.entity.Place arg0, int arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -317,7 +317,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public t1708e.asm.diduduadi.service.place.Place[] getListPlace() throws java.rmi.RemoteException {
+    public t1708e.asm.diduduadi.entity.Place[] getListPlace() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -341,9 +341,9 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.place.Place[]) _resp;
+                return (t1708e.asm.diduduadi.entity.Place[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.place.Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.place.Place[].class);
+                return (t1708e.asm.diduduadi.entity.Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Place[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
