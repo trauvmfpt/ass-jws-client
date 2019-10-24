@@ -22,7 +22,7 @@ public class ImageServiceServiceLocator extends org.apache.axis.client.Service i
     }
 
     // Use to get a proxy class for ImageServicePort
-    private java.lang.String ImageServicePort_address = "http://localhost:9000/image";
+    private java.lang.String ImageServicePort_address = "http://23.96.248.50:9000/image";
 
     public java.lang.String getImageServicePortAddress() {
         return ImageServicePort_address;

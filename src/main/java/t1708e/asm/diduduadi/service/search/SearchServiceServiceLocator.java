@@ -22,7 +22,7 @@ public class SearchServiceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for SearchServicePort
-    private java.lang.String SearchServicePort_address = "http://localhost:9000/search";
+    private java.lang.String SearchServicePort_address = "http://23.96.248.50:9000/search";
 
     public java.lang.String getSearchServicePortAddress() {
         return SearchServicePort_address;

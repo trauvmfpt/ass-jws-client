@@ -22,7 +22,7 @@ public class RatingServiceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for RatingServicePort
-    private java.lang.String RatingServicePort_address = "http://localhost:9000/rate";
+    private java.lang.String RatingServicePort_address = "http://23.96.248.50:9000/rate";
 
     public java.lang.String getRatingServicePortAddress() {
         return RatingServicePort_address;
