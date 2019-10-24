@@ -30,23 +30,10 @@
 
 <div class="super_container">
     <!--header.html  that's here  -->
+<!--    <div th:replace="fragment/header :: header"></div>-->
     <div th:replace="fragment/header :: header"></div>
 
     <div layout:fragment="content">
-
-        <!-- Home -->
-
-        <div class="home">
-            <div class="home_background parallax-window" data-parallax="scroll"
-                 data-image-src="../../static/images/contact_background.jpg"
-                 th:src="@{/images/contact_background.jpg}">
-                <img src="../../static/images/contact_background.jpg"
-                     th:src="@{/images/contact_background.jpg}">
-            </div>
-            <div class="home_content">
-                <div class="home_title" >Place</div>
-            </div>
-        </div>
 
         <!-- Contact -->
 
@@ -58,19 +45,23 @@
                         <!-- Contact Form -->
                         <div class="contact_form_container">
                             <div class="contact_title text-center">Create post</div>
-                            <form action="#" id="contact_form" class="contact_form text-center">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Place
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
+                            <form enctype="multipart/form-data" action="/posts/create" method="post" id="contact_form" class="contact_form text-center">
+                                <div class="search_item">
+                                    <div>Place</div>
+                                    <select name="placeId" id="" class="dropdown_item_select search_input">
+                                        <option selected disabled>Choose Place</option>
+                                        <option th:each="place : ${places}" th:value="${place.id}" th:text="${place.address}"></option>
+                                    </select>
                                 </div>
-                                <textarea id="contact_form_message" class="text_field contact_form_message" name="information" rows="4"
-                                          placeholder="Information" required="required" data-error="Write the information."></textarea>
+                                <div>
+                                    <textarea id="contact_form_message" class="text_field contact_form_message" name="information" rows="4"
+                                              placeholder="Information" required="required" data-error="Write the information."></textarea>
+                                </div>
+                                <div class="search_item">
+                                    <div>Image</div>
+                                    <input class="button" type="file" multiple="multiple" name="file" value="Upload Image">
+                                </div>
+
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="form_submit_button button trans_200"
                                             style="display: block;">create post<span></span><span></span><span></span></button>

@@ -22,7 +22,7 @@ public class PlaceServiceServiceLocator extends org.apache.axis.client.Service i
     }
 
     // Use to get a proxy class for PlaceServicePort
-    private java.lang.String PlaceServicePort_address = "http://localhost:9000/place";
+    private java.lang.String PlaceServicePort_address = "http://23.96.248.50:9000/place";
 
     public java.lang.String getPlaceServicePortAddress() {
         return PlaceServicePort_address;

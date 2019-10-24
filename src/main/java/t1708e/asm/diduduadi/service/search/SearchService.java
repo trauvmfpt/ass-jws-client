@@ -7,7 +7,9 @@
 
 package t1708e.asm.diduduadi.service.search;
 
+import t1708e.asm.diduduadi.entity.*;
+
 public interface SearchService extends java.rmi.Remote {
-    public t1708e.asm.diduduadi.service.search.Place[] searchByPlace(java.lang.String arg0) throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.search.Post[] searchByPost(java.lang.String arg0) throws java.rmi.RemoteException;
+    public Place[] searchByPlace(java.lang.String arg0) throws java.rmi.RemoteException;
+    public Post[] searchByPost(java.lang.String arg0) throws java.rmi.RemoteException;
 }

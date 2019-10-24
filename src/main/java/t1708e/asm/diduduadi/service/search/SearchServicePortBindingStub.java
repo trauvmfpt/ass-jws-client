@@ -7,6 +7,8 @@
 
 package t1708e.asm.diduduadi.service.search;
 
+import t1708e.asm.diduduadi.entity.*;
+
 public class SearchServicePortBindingStub extends org.apache.axis.client.Stub implements t1708e.asm.diduduadi.service.search.SearchService {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
@@ -29,7 +31,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.search.Place[].class);
+        oper.setReturnClass(Place[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -41,7 +43,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "post"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.search.Post[].class);
+        oper.setReturnClass(Post[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -80,49 +82,56 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Comment.class;
+            cls = Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Image.class;
+            cls = Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Place.class;
+            cls = Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Post.class;
+            cls = Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Rating.class;
+            cls = Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.Role.class;
+            cls = Role.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://service/", "role");
+            cachedSerQNames.add(qName);
+            cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.search.User.class;
+            cls = User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -193,7 +202,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         }
     }
 
-    public t1708e.asm.diduduadi.service.search.Place[] searchByPlace(java.lang.String arg0) throws java.rmi.RemoteException {
+    public Place[] searchByPlace(java.lang.String arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -217,9 +226,9 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.search.Place[]) _resp;
+                return (Place[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.search.Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.search.Place[].class);
+                return (Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, Place[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -227,7 +236,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
 }
     }
 
-    public t1708e.asm.diduduadi.service.search.Post[] searchByPost(java.lang.String arg0) throws java.rmi.RemoteException {
+    public Post[] searchByPost(java.lang.String arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -251,9 +260,9 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.search.Post[]) _resp;
+                return (Post[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.search.Post[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.search.Post[].class);
+                return (Post[]) org.apache.axis.utils.JavaUtils.convert(_resp, Post[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

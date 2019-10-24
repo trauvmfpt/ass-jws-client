@@ -7,6 +7,8 @@
 
 package t1708e.asm.diduduadi.service.place;
 
+import t1708e.asm.diduduadi.entity.*;
+
 public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub implements t1708e.asm.diduduadi.service.place.PlaceService {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
@@ -24,20 +26,20 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getList");
-        oper.setReturnType(new javax.xml.namespace.QName("http://service/", "user"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.place.User[].class);
+        oper.setName("detailPlace");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
+        oper.setReturnClass(Place.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("detail");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://service/", "user"));
-        oper.setReturnClass(t1708e.asm.diduduadi.service.place.User.class);
+        oper.setName("getListPlace");
+        oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
+        oper.setReturnClass(Place[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -45,7 +47,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatePlace");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.service.place.Place.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), Place.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -59,7 +61,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createPlace");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), t1708e.asm.diduduadi.service.place.Place.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "place"), Place.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -102,49 +104,56 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Comment.class;
+            cls = Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Image.class;
+            cls = Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Place.class;
+            cls = Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Post.class;
+            cls = Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Rating.class;
+            cls = Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.Role.class;
+            cls = Role.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://service/", "role");
+            cachedSerQNames.add(qName);
+            cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.service.place.User.class;
+            cls = User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -215,7 +224,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         }
     }
 
-    public t1708e.asm.diduduadi.service.place.User[] getList() throws java.rmi.RemoteException {
+    public Place detailPlace(int arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -227,41 +236,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service/", "getList"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (t1708e.asm.diduduadi.service.place.User[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.place.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.place.User[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public t1708e.asm.diduduadi.service.place.User detail(int arg0) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service/", "detail"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service/", "detailPlace"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -273,9 +248,9 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.service.place.User) _resp;
+                return (Place) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.service.place.User) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.service.place.User.class);
+                return (Place) org.apache.axis.utils.JavaUtils.convert(_resp, Place.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -283,7 +258,41 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean updatePlace(t1708e.asm.diduduadi.service.place.Place arg0, int arg1) throws java.rmi.RemoteException {
+    public Place[] getListPlace() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service/", "getListPlace"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (Place[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, Place[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public boolean updatePlace(Place arg0, int arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -317,7 +326,7 @@ public class PlaceServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
-    public boolean createPlace(t1708e.asm.diduduadi.service.place.Place arg0) throws java.rmi.RemoteException {
+    public boolean createPlace(Place arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

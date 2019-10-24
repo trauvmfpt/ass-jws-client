@@ -7,10 +7,12 @@
 
 package t1708e.asm.diduduadi.service.image;
 
+import t1708e.asm.diduduadi.entity.*;
+
 public interface ImageService extends java.rmi.Remote {
-    public boolean update(t1708e.asm.diduduadi.service.image.Rating arg0) throws java.rmi.RemoteException;
-    public boolean delete(t1708e.asm.diduduadi.service.image.User arg0) throws java.rmi.RemoteException;
-    public boolean create(t1708e.asm.diduduadi.service.image.Rating arg0) throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.image.Rating[] getAll() throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.image.Image getById(int arg0) throws java.rmi.RemoteException;
+    public Image getByIdImage(int arg0) throws java.rmi.RemoteException;
+    public boolean updateImage(Image arg0) throws java.rmi.RemoteException;
+    public boolean createImage(Image arg0) throws java.rmi.RemoteException;
+    public boolean deleteImage(Image arg0) throws java.rmi.RemoteException;
+    public Image[] getAllImage() throws java.rmi.RemoteException;
 }

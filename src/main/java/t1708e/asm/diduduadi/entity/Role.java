@@ -5,14 +5,14 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package t1708e.asm.diduduadi.service.user;
+package t1708e.asm.diduduadi.entity;
 
 public class Role  implements java.io.Serializable {
     private int id;
 
     private java.lang.String name;
 
-    private t1708e.asm.diduduadi.service.user.User[] userSet;
+    private User[] userSet;
 
     public Role() {
     }
@@ -20,7 +20,7 @@ public class Role  implements java.io.Serializable {
     public Role(
            int id,
            java.lang.String name,
-           t1708e.asm.diduduadi.service.user.User[] userSet) {
+           User[] userSet) {
            this.id = id;
            this.name = name;
            this.userSet = userSet;
@@ -72,7 +72,7 @@ public class Role  implements java.io.Serializable {
      * 
      * @return userSet
      */
-    public t1708e.asm.diduduadi.service.user.User[] getUserSet() {
+    public User[] getUserSet() {
         return userSet;
     }
 
@@ -82,15 +82,15 @@ public class Role  implements java.io.Serializable {
      * 
      * @param userSet
      */
-    public void setUserSet(t1708e.asm.diduduadi.service.user.User[] userSet) {
+    public void setUserSet(User[] userSet) {
         this.userSet = userSet;
     }
 
-    public t1708e.asm.diduduadi.service.user.User getUserSet(int i) {
+    public User getUserSet(int i) {
         return this.userSet[i];
     }
 
-    public void setUserSet(int i, t1708e.asm.diduduadi.service.user.User _value) {
+    public void setUserSet(int i, User _value) {
         this.userSet[i] = _value;
     }
 

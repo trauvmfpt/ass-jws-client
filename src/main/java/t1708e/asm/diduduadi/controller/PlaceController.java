@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import t1708e.asm.diduduadi.entity.Place;
+import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 
 import javax.validation.Valid;
@@ -31,7 +31,7 @@ public class PlaceController {
     public String create(Place place){ return "place/form"; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/create")
-    public String store(t1708e.asm.diduduadi.service.place.Place place, BindingResult bindingResult) throws RemoteException {
+    public String store(Place place, BindingResult bindingResult) throws RemoteException {
         placeService.createPlace(place);
         return "redirect:/place/list/";
 }

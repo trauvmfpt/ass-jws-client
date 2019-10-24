@@ -7,9 +7,11 @@
 
 package t1708e.asm.diduduadi.service.comment;
 
+import t1708e.asm.diduduadi.entity.Comment;
+
 public interface CommentService extends java.rmi.Remote {
-    public t1708e.asm.diduduadi.service.comment.User[] getList() throws java.rmi.RemoteException;
-    public t1708e.asm.diduduadi.service.comment.User detail(int arg0) throws java.rmi.RemoteException;
-    public boolean updateComment(t1708e.asm.diduduadi.service.comment.Comment arg0, int arg1) throws java.rmi.RemoteException;
-    public boolean createComment(t1708e.asm.diduduadi.service.comment.Comment arg0) throws java.rmi.RemoteException;
+    public boolean createComment(Comment arg0) throws java.rmi.RemoteException;
+    public Comment[] getListComment() throws java.rmi.RemoteException;
+    public boolean updateComment(Comment arg0, int arg1) throws java.rmi.RemoteException;
+    public Comment detailComment(int arg0) throws java.rmi.RemoteException;
 }

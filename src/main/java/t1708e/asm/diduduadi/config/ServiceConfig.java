@@ -10,6 +10,8 @@ import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.place.PlaceServiceServiceLocator;
 import t1708e.asm.diduduadi.service.rate.RatingService;
 import t1708e.asm.diduduadi.service.rate.RatingServiceServiceLocator;
+import t1708e.asm.diduduadi.service.post.PostService;
+import t1708e.asm.diduduadi.service.post.PostServiceServiceLocator;
 import t1708e.asm.diduduadi.service.search.SearchService;
 import t1708e.asm.diduduadi.service.search.SearchServiceServiceLocator;
 import t1708e.asm.diduduadi.service.user.UserService;
@@ -19,6 +21,13 @@ import javax.xml.rpc.ServiceException;
 
 @Configuration
 public class ServiceConfig {
+
+    @Bean
+    UserService userService() throws ServiceException {
+        UserServiceServiceLocator locator = new UserServiceServiceLocator();
+        UserService userService = locator.getUserServicePort();
+        return userService;
+    }
     @Bean
     PlaceService placeService() throws ServiceException {
         PlaceServiceServiceLocator locator = new PlaceServiceServiceLocator();
@@ -53,9 +62,9 @@ public class ServiceConfig {
         return searchService;
     }
     @Bean
-    UserService userService() throws ServiceException {
-        UserServiceServiceLocator locator = new UserServiceServiceLocator();
-        UserService userService = locator.getUserServicePort();
-        return userService;
+    PostService postService() throws ServiceException {
+        PostServiceServiceLocator locator = new PostServiceServiceLocator();
+        PostService postService = locator.getPostServicePort();
+        return postService;
     }
 }
