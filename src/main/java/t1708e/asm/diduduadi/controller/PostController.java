@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import t1708e.asm.diduduadi.dto.PlaceDTO;
 import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.post.PostService;
@@ -27,8 +28,8 @@ public class PostController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/create")
     public String create(Model model) throws RemoteException {
-        Place[] placeArr = placeService.getListPlace();
-        List<Place> placeList = new ArrayList<>();
+        PlaceDTO[] placeArr = placeService.getListPlace();
+        List<PlaceDTO> placeList = new ArrayList<>();
         if (placeArr != null) {
             placeList = Arrays.asList(placeArr);
         }
@@ -42,7 +43,7 @@ public class PostController {
                         @RequestParam("information") String information,
                         @RequestParam("placeId") int placeId) throws RemoteException {
         //get Place
-        Place place = placeService.detailPlace(placeId);
+        PlaceDTO place =(PlaceDTO) placeService.detailPlace(placeId);
         Place placePost = new Place();
         placePost.setId(place.getId());
         placePost.setName(place.getName());

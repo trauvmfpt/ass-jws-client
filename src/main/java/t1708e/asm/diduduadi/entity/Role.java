@@ -1,8 +1,8 @@
 /**
  * Role.java
  *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ * このファイルはWSDLから自動生成されました / [en]-(This file was auto-generated from WSDL)
+ * Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java生成器によって / [en]-(by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.)
  */
 
 package t1708e.asm.diduduadi.entity;
@@ -12,26 +12,24 @@ public class Role  implements java.io.Serializable {
 
     private java.lang.String name;
 
-
-    private User[] userSet;
-
+    private t1708e.asm.diduduadi.entity.User[] userSet;
 
     public Role() {
     }
 
     public Role(
-           int id,
-           java.lang.String name,
-           User[] userSet) {
-           this.id = id;
-           this.name = name;
-           this.userSet = userSet;
+            int id,
+            java.lang.String name,
+            t1708e.asm.diduduadi.entity.User[] userSet) {
+        this.id = id;
+        this.name = name;
+        this.userSet = userSet;
     }
 
 
     /**
      * Gets the id value for this Role.
-     * 
+     *
      * @return id
      */
     public int getId() {
@@ -41,7 +39,7 @@ public class Role  implements java.io.Serializable {
 
     /**
      * Sets the id value for this Role.
-     * 
+     *
      * @param id
      */
     public void setId(int id) {
@@ -51,7 +49,7 @@ public class Role  implements java.io.Serializable {
 
     /**
      * Gets the name value for this Role.
-     * 
+     *
      * @return name
      */
     public java.lang.String getName() {
@@ -61,7 +59,7 @@ public class Role  implements java.io.Serializable {
 
     /**
      * Sets the name value for this Role.
-     * 
+     *
      * @param name
      */
     public void setName(java.lang.String name) {
@@ -71,21 +69,19 @@ public class Role  implements java.io.Serializable {
 
     /**
      * Gets the userSet value for this Role.
-     * 
+     *
      * @return userSet
      */
-
-    public User[] getUserSet() {
+    public t1708e.asm.diduduadi.entity.User[] getUserSet() {
         return userSet;
     }
 
 
     /**
      * Sets the userSet value for this Role.
-     * 
+     *
      * @param userSet
      */
-
     public void setUserSet(t1708e.asm.diduduadi.entity.User[] userSet) {
         this.userSet = userSet;
     }
@@ -95,17 +91,6 @@ public class Role  implements java.io.Serializable {
     }
 
     public void setUserSet(int i, t1708e.asm.diduduadi.entity.User _value) {
-
-    public void setUserSet(User[] userSet) {
-        this.userSet = userSet;
-    }
-
-    public User getUserSet(int i) {
-        return this.userSet[i];
-    }
-
-    public void setUserSet(int i, User _value) {
-
         this.userSet[i] = _value;
     }
 
@@ -120,14 +105,14 @@ public class Role  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            this.id == other.getId() &&
-            ((this.name==null && other.getName()==null) || 
-             (this.name!=null &&
-              this.name.equals(other.getName()))) &&
-            ((this.userSet==null && other.getUserSet()==null) || 
-             (this.userSet!=null &&
-              java.util.Arrays.equals(this.userSet, other.getUserSet())));
+        _equals = true &&
+                this.id == other.getId() &&
+                ((this.name==null && other.getName()==null) ||
+                        (this.name!=null &&
+                                this.name.equals(other.getName()))) &&
+                ((this.userSet==null && other.getUserSet()==null) ||
+                        (this.userSet!=null &&
+                                java.util.Arrays.equals(this.userSet, other.getUserSet())));
         __equalsCalc = null;
         return _equals;
     }
@@ -149,7 +134,7 @@ public class Role  implements java.io.Serializable {
                  i++) {
                 java.lang.Object obj = java.lang.reflect.Array.get(getUserSet(), i);
                 if (obj != null &&
-                    !obj.getClass().isArray()) {
+                        !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
                 }
             }
@@ -158,9 +143,9 @@ public class Role  implements java.io.Serializable {
         return _hashCode;
     }
 
-    // Type metadata
+    // メタデータ型 / [en]-(Type metadata)
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Role.class, true);
+            new org.apache.axis.description.TypeDesc(Role.class, true);
 
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://service/", "role"));
@@ -188,7 +173,7 @@ public class Role  implements java.io.Serializable {
     }
 
     /**
-     * Return type metadata object
+     * メタデータオブジェクトの型を返却 / [en]-(Return type metadata object)
      */
     public static org.apache.axis.description.TypeDesc getTypeDesc() {
         return typeDesc;
@@ -198,24 +183,24 @@ public class Role  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanSerializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType,
+            java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return
+                new  org.apache.axis.encoding.ser.BeanSerializer(
+                        _javaType, _xmlType, typeDesc);
     }
 
     /**
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanDeserializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType,
+            java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return
+                new  org.apache.axis.encoding.ser.BeanDeserializer(
+                        _javaType, _xmlType, typeDesc);
     }
 
 }

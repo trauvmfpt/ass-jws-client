@@ -4,9 +4,11 @@ package t1708e.asm.diduduadi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import t1708e.asm.diduduadi.dto.PlaceDTO;
 import t1708e.asm.diduduadi.entity.Place;
 import t1708e.asm.diduduadi.entity.Post;
 import t1708e.asm.diduduadi.service.place.PlaceService;
@@ -27,7 +29,7 @@ public class PlaceController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public String detail(@PathVariable int id, Model model) throws RemoteException{
-        Place place = placeService.detailPlace(id);
+        Place place = (Place) placeService.detailPlace(id);
 
         Post[] listPost = place.getPostSet();
         List<Post> posts = new ArrayList<>();
@@ -56,8 +58,8 @@ public class PlaceController {
   
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     public String list(Model model) throws RemoteException {
-        Place[] placesarr = placeService.getListPlace();
-        List<Place> places = new ArrayList<>();
+        PlaceDTO[] placesarr = placeService.getListPlace();
+        List<PlaceDTO> places = new ArrayList<>();
         if (placesarr!= null){
             places = Arrays.asList(placesarr);
         }

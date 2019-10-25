@@ -18,9 +18,9 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        t1708e.asm.diduduadi.entity.User user = null;
+        t1708e.asm.diduduadi.service.user.UserDTO user = null;
         try {
-            user = userService.getByUserName(s);
+            user = (t1708e.asm.diduduadi.service.user.UserDTO) userService.getByUserName(s);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

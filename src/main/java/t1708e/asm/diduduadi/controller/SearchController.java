@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import t1708e.asm.diduduadi.entity.*;
+import t1708e.asm.diduduadi.dto.PlaceDTO;
+import t1708e.asm.diduduadi.dto.PostDTO;
 import t1708e.asm.diduduadi.service.search.SearchService;
 
 import java.rmi.RemoteException;
@@ -26,13 +27,13 @@ public class SearchController {
     @RequestMapping(method = RequestMethod.GET)
     public String searchAll(@RequestParam("key") String key, Model model) throws RemoteException {
 
-        Post[] postList = searchService.searchByPost(key);
-        List<Post> a = new ArrayList<Post>();
+        PostDTO[] postList = searchService.searchByPost(key);
+        List<PostDTO> a = new ArrayList<PostDTO>();
         if (postList != null){
             a = Arrays.asList(postList);
         }
 
-        Place[] placeList = searchService.searchByPlace(key);
+        PlaceDTO[] placeList = searchService.searchByPlace(key);
         model.addAttribute("posts", a);
         model.addAttribute("places", placeList);
         return "search/list";
