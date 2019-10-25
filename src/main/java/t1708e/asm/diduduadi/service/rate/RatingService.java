@@ -7,6 +7,7 @@
 
 package t1708e.asm.diduduadi.service.rate;
 
+
 import t1708e.asm.diduduadi.entity.*;
 
 public interface RatingService extends java.rmi.Remote {
@@ -15,4 +16,5 @@ public interface RatingService extends java.rmi.Remote {
     public boolean deleteRate(Rating arg0) throws java.rmi.RemoteException;
     public boolean updateRate(Rating arg0) throws java.rmi.RemoteException;
     public boolean createRate(Rating arg0) throws java.rmi.RemoteException;
+
 }

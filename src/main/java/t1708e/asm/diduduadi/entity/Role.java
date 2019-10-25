@@ -12,7 +12,9 @@ public class Role  implements java.io.Serializable {
 
     private java.lang.String name;
 
+
     private User[] userSet;
+
 
     public Role() {
     }
@@ -72,6 +74,7 @@ public class Role  implements java.io.Serializable {
      * 
      * @return userSet
      */
+
     public User[] getUserSet() {
         return userSet;
     }
@@ -82,6 +85,17 @@ public class Role  implements java.io.Serializable {
      * 
      * @param userSet
      */
+
+    public void setUserSet(t1708e.asm.diduduadi.entity.User[] userSet) {
+        this.userSet = userSet;
+    }
+
+    public t1708e.asm.diduduadi.entity.User getUserSet(int i) {
+        return this.userSet[i];
+    }
+
+    public void setUserSet(int i, t1708e.asm.diduduadi.entity.User _value) {
+
     public void setUserSet(User[] userSet) {
         this.userSet = userSet;
     }
@@ -91,6 +105,7 @@ public class Role  implements java.io.Serializable {
     }
 
     public void setUserSet(int i, User _value) {
+
         this.userSet[i] = _value;
     }
 

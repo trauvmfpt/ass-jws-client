@@ -10,12 +10,14 @@
 <message name="detailResponse">
 <part name="parameters" element="tns:detailResponse"></part>
 </message>
+
 <message name="updateUser">
 <part name="parameters" element="tns:updateUser"></part>
 </message>
 <message name="updateUserResponse">
 <part name="parameters" element="tns:updateUserResponse"></part>
 </message>
+
 <message name="getList">
 <part name="parameters" element="tns:getList"></part>
 </message>
@@ -34,6 +36,7 @@
 <message name="NoSuchAlgorithmException">
 <part name="fault" element="tns:NoSuchAlgorithmException"></part>
 </message>
+
 <message name="login">
 <part name="parameters" element="tns:login"></part>
 </message>
@@ -50,14 +53,15 @@
 <operation name="detail">
 <input wsam:Action="http://service/UserService/detailRequest" message="tns:detail"></input>
 <output wsam:Action="http://service/UserService/detailResponse" message="tns:detailResponse"></output>
+
 </operation>
 <operation name="updateUser">
 <input wsam:Action="http://service/UserService/updateUserRequest" message="tns:updateUser"></input>
 <output wsam:Action="http://service/UserService/updateUserResponse" message="tns:updateUserResponse"></output>
 </operation>
-<operation name="getList">
-<input wsam:Action="http://service/UserService/getListRequest" message="tns:getList"></input>
-<output wsam:Action="http://service/UserService/getListResponse" message="tns:getListResponse"></output>
+<operation name="login">
+<input wsam:Action="http://service/UserService/loginRequest" message="tns:login"></input>
+<output wsam:Action="http://service/UserService/loginResponse" message="tns:loginResponse"></output>
 </operation>
 <operation name="createUser">
 <input wsam:Action="http://service/UserService/createUserRequest" message="tns:createUser"></input>
@@ -65,6 +69,7 @@
 <fault message="tns:InvalidKeySpecException" name="InvalidKeySpecException" wsam:Action="http://service/UserService/createUser/Fault/InvalidKeySpecException"></fault>
 <fault message="tns:NoSuchAlgorithmException" name="NoSuchAlgorithmException" wsam:Action="http://service/UserService/createUser/Fault/NoSuchAlgorithmException"></fault>
 </operation>
+
 <operation name="login">
 <input wsam:Action="http://service/UserService/loginRequest" message="tns:login"></input>
 <output wsam:Action="http://service/UserService/loginResponse" message="tns:loginResponse"></output>
@@ -85,6 +90,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="updateUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -103,6 +109,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="createUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -118,6 +125,7 @@
 <soap:fault name="NoSuchAlgorithmException" use="literal"></soap:fault>
 </fault>
 </operation>
+
 <operation name="login">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -126,6 +134,7 @@
 <output>
 <soap:body use="literal"></soap:body>
 </output>
+
 </operation>
 <operation name="delete">
 <soap:operation soapAction=""></soap:operation>

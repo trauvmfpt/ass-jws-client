@@ -4,8 +4,10 @@
 <xsd:import namespace="http://service/" schemaLocation="http://23.96.248.50:9000/rate?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
+
 <message name="getAllRate">
 <part name="parameters" element="tns:getAllRate"></part>
+
 </message>
 <message name="getAllRateResponse">
 <part name="parameters" element="tns:getAllRateResponse"></part>
@@ -22,6 +24,7 @@
 <message name="deleteRateResponse">
 <part name="parameters" element="tns:deleteRateResponse"></part>
 </message>
+
 <message name="updateRate">
 <part name="parameters" element="tns:updateRate"></part>
 </message>
@@ -38,11 +41,13 @@
 <operation name="getAllRate">
 <input wsam:Action="http://service/RatingService/getAllRateRequest" message="tns:getAllRate"></input>
 <output wsam:Action="http://service/RatingService/getAllRateResponse" message="tns:getAllRateResponse"></output>
+
 </operation>
 <operation name="getByUserIdAndPostId">
 <input wsam:Action="http://service/RatingService/getByUserIdAndPostIdRequest" message="tns:getByUserIdAndPostId"></input>
 <output wsam:Action="http://service/RatingService/getByUserIdAndPostIdResponse" message="tns:getByUserIdAndPostIdResponse"></output>
 </operation>
+
 <operation name="deleteRate">
 <input wsam:Action="http://service/RatingService/deleteRateRequest" message="tns:deleteRate"></input>
 <output wsam:Action="http://service/RatingService/deleteRateResponse" message="tns:deleteRateResponse"></output>
@@ -54,11 +59,14 @@
 <operation name="createRate">
 <input wsam:Action="http://service/RatingService/createRateRequest" message="tns:createRate"></input>
 <output wsam:Action="http://service/RatingService/createRateResponse" message="tns:createRateResponse"></output>
+
 </operation>
 </portType>
 <binding name="RatingServicePortBinding" type="tns:RatingService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+
 <operation name="getAllRate">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -76,7 +84,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="deleteRate">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -85,7 +95,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="updateRate">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -94,7 +106,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="createRate">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

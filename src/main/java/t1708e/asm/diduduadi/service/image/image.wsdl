@@ -4,8 +4,10 @@
 <xsd:import namespace="http://service/" schemaLocation="http://23.96.248.50:9000/image?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
+
 <message name="getByIdImage">
 <part name="parameters" element="tns:getByIdImage"></part>
+
 </message>
 <message name="getByIdImageResponse">
 <part name="parameters" element="tns:getByIdImageResponse"></part>
@@ -22,6 +24,7 @@
 <message name="createImageResponse">
 <part name="parameters" element="tns:createImageResponse"></part>
 </message>
+
 <message name="deleteImage">
 <part name="parameters" element="tns:deleteImage"></part>
 </message>
@@ -38,6 +41,7 @@
 <operation name="getByIdImage">
 <input wsam:Action="http://service/ImageService/getByIdImageRequest" message="tns:getByIdImage"></input>
 <output wsam:Action="http://service/ImageService/getByIdImageResponse" message="tns:getByIdImageResponse"></output>
+
 </operation>
 <operation name="updateImage">
 <input wsam:Action="http://service/ImageService/updateImageRequest" message="tns:updateImage"></input>
@@ -47,6 +51,7 @@
 <input wsam:Action="http://service/ImageService/createImageRequest" message="tns:createImage"></input>
 <output wsam:Action="http://service/ImageService/createImageResponse" message="tns:createImageResponse"></output>
 </operation>
+
 <operation name="deleteImage">
 <input wsam:Action="http://service/ImageService/deleteImageRequest" message="tns:deleteImage"></input>
 <output wsam:Action="http://service/ImageService/deleteImageResponse" message="tns:deleteImageResponse"></output>
@@ -59,6 +64,7 @@
 <binding name="ImageServicePortBinding" type="tns:ImageService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
 <operation name="getByIdImage">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -67,7 +73,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="updateImage">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -76,7 +84,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="createImage">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -86,6 +96,7 @@
 </output>
 </operation>
 <operation name="deleteImage">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -94,7 +105,9 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+
 <operation name="getAllImage">
+
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

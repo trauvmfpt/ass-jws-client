@@ -26,31 +26,37 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("getByIdImage");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "image"));
         oper.setReturnClass(Image.class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("updateImage");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "image"), Image.class, false, false);
         param.setOmittable(true);
+
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://service/", "image"));
+        oper.setReturnClass(t1708e.asm.diduduadi.entity.Image.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("createImage");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "image"), Image.class, false, false);
+
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -61,8 +67,10 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("deleteImage");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "image"), Image.class, false, false);
+
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -73,9 +81,11 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("getAllImage");
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "image"));
         oper.setReturnClass(Image[].class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -114,41 +124,50 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
+
             cls = Comment.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = Image.class;
+            cls = t1708e.asm.diduduadi.entity.Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
+
             cls = Place.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
+
             cls = Post.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
+
             cls = Rating.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
+
             cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -157,13 +176,16 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
             cls = Role.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
+
             cls = User.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -234,7 +256,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         }
     }
 
+
     public Image getByIdImage(int arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -246,11 +270,13 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "getByIdImage"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
  try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(arg0)});
+
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -258,9 +284,11 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
+
                 return (Image) _resp;
             } catch (java.lang.Exception _exception) {
                 return (Image) org.apache.axis.utils.JavaUtils.convert(_resp, Image.class);
+
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -268,7 +296,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
+
     public boolean updateImage(Image arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -280,11 +310,13 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "updateImage"));
+
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {arg0});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(arg0)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -292,9 +324,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (t1708e.asm.diduduadi.entity.Image) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (t1708e.asm.diduduadi.entity.Image) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Image.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -302,7 +334,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
+
     public boolean createImage(Image arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -314,7 +348,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "createImage"));
+
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -336,7 +372,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
+
     public boolean deleteImage(Image arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -348,7 +386,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "deleteImage"));
+
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -370,7 +410,9 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
 }
     }
 
+
     public Image[] getAllImage() throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -382,11 +424,13 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "getAllImage"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
  try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -394,9 +438,11 @@ public class ImageServicePortBindingStub extends org.apache.axis.client.Stub imp
         else {
             extractAttachments(_call);
             try {
+
                 return (Image[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (Image[]) org.apache.axis.utils.JavaUtils.convert(_resp, Image[].class);
+
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

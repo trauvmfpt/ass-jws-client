@@ -16,7 +16,6 @@ import t1708e.asm.diduduadi.service.search.SearchService;
 import t1708e.asm.diduduadi.service.search.SearchServiceServiceLocator;
 import t1708e.asm.diduduadi.service.user.UserService;
 import t1708e.asm.diduduadi.service.user.UserServiceServiceLocator;
-
 import javax.xml.rpc.ServiceException;
 
 @Configuration

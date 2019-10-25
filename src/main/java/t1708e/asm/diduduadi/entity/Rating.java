@@ -10,23 +10,23 @@ package t1708e.asm.diduduadi.entity;
 public class Rating  implements java.io.Serializable {
     private int id;
 
-    private Image image;
+    private t1708e.asm.diduduadi.entity.Image image;
 
-    private Post post;
+    private t1708e.asm.diduduadi.entity.Post post;
 
     private double star;
 
-    private User user;
+    private t1708e.asm.diduduadi.entity.User user;
 
     public Rating() {
     }
 
     public Rating(
            int id,
-           Image image,
-           Post post,
+           t1708e.asm.diduduadi.entity.Image image,
+           t1708e.asm.diduduadi.entity.Post post,
            double star,
-           User user) {
+           t1708e.asm.diduduadi.entity.User user) {
            this.id = id;
            this.image = image;
            this.post = post;
@@ -60,7 +60,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @return image
      */
-    public Image getImage() {
+    public t1708e.asm.diduduadi.entity.Image getImage() {
         return image;
     }
 
@@ -70,7 +70,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @param image
      */
-    public void setImage(Image image) {
+    public void setImage(t1708e.asm.diduduadi.entity.Image image) {
         this.image = image;
     }
 
@@ -80,7 +80,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @return post
      */
-    public Post getPost() {
+    public t1708e.asm.diduduadi.entity.Post getPost() {
         return post;
     }
 
@@ -90,7 +90,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @param post
      */
-    public void setPost(Post post) {
+    public void setPost(t1708e.asm.diduduadi.entity.Post post) {
         this.post = post;
     }
 
@@ -120,7 +120,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @return user
      */
-    public User getUser() {
+    public t1708e.asm.diduduadi.entity.User getUser() {
         return user;
     }
 
@@ -130,7 +130,7 @@ public class Rating  implements java.io.Serializable {
      * 
      * @param user
      */
-    public void setUser(User user) {
+    public void setUser(t1708e.asm.diduduadi.entity.User user) {
         this.user = user;
     }
 

@@ -12,7 +12,7 @@ public class User  implements java.io.Serializable {
 
     private int age;
 
-    private Comment[] commentSet;
+    private t1708e.asm.diduduadi.entity.Comment[] commentSet;
 
     private java.lang.String email;
 
@@ -24,11 +24,11 @@ public class User  implements java.io.Serializable {
 
     private java.lang.String password;
 
-    private Post[] postSet;
+    private t1708e.asm.diduduadi.entity.Post[] postSet;
 
-    private Rating[] ratingSet;
+    private t1708e.asm.diduduadi.entity.Rating[] ratingSet;
 
-    private int role;
+    private t1708e.asm.diduduadi.entity.Role[] roleSet;
 
     private java.lang.String salt;
 
@@ -44,15 +44,15 @@ public class User  implements java.io.Serializable {
     public User(
            java.lang.String address,
            int age,
-           Comment[] commentSet,
+           t1708e.asm.diduduadi.entity.Comment[] commentSet,
            java.lang.String email,
            int gender,
            int id,
            java.lang.String name,
            java.lang.String password,
-           Post[] postSet,
-           Rating[] ratingSet,
-           int role,
+           t1708e.asm.diduduadi.entity.Post[] postSet,
+           t1708e.asm.diduduadi.entity.Rating[] ratingSet,
+           t1708e.asm.diduduadi.entity.Role[] roleSet,
            java.lang.String salt,
            int status,
            java.lang.String token,
@@ -67,7 +67,7 @@ public class User  implements java.io.Serializable {
            this.password = password;
            this.postSet = postSet;
            this.ratingSet = ratingSet;
-           this.role = role;
+           this.roleSet = roleSet;
            this.salt = salt;
            this.status = status;
            this.token = token;
@@ -120,7 +120,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return commentSet
      */
-    public Comment[] getCommentSet() {
+    public t1708e.asm.diduduadi.entity.Comment[] getCommentSet() {
         return commentSet;
     }
 
@@ -130,15 +130,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param commentSet
      */
-    public void setCommentSet(Comment[] commentSet) {
+    public void setCommentSet(t1708e.asm.diduduadi.entity.Comment[] commentSet) {
         this.commentSet = commentSet;
     }
 
-    public Comment getCommentSet(int i) {
+    public t1708e.asm.diduduadi.entity.Comment getCommentSet(int i) {
         return this.commentSet[i];
     }
 
-    public void setCommentSet(int i, Comment _value) {
+    public void setCommentSet(int i, t1708e.asm.diduduadi.entity.Comment _value) {
         this.commentSet[i] = _value;
     }
 
@@ -248,7 +248,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return postSet
      */
-    public Post[] getPostSet() {
+    public t1708e.asm.diduduadi.entity.Post[] getPostSet() {
         return postSet;
     }
 
@@ -258,15 +258,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param postSet
      */
-    public void setPostSet(Post[] postSet) {
+    public void setPostSet(t1708e.asm.diduduadi.entity.Post[] postSet) {
         this.postSet = postSet;
     }
 
-    public Post getPostSet(int i) {
+    public t1708e.asm.diduduadi.entity.Post getPostSet(int i) {
         return this.postSet[i];
     }
 
-    public void setPostSet(int i, Post _value) {
+    public void setPostSet(int i, t1708e.asm.diduduadi.entity.Post _value) {
         this.postSet[i] = _value;
     }
 
@@ -276,7 +276,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return ratingSet
      */
-    public Rating[] getRatingSet() {
+    public t1708e.asm.diduduadi.entity.Rating[] getRatingSet() {
         return ratingSet;
     }
 
@@ -286,36 +286,44 @@ public class User  implements java.io.Serializable {
      * 
      * @param ratingSet
      */
-    public void setRatingSet(Rating[] ratingSet) {
+    public void setRatingSet(t1708e.asm.diduduadi.entity.Rating[] ratingSet) {
         this.ratingSet = ratingSet;
     }
 
-    public Rating getRatingSet(int i) {
+    public t1708e.asm.diduduadi.entity.Rating getRatingSet(int i) {
         return this.ratingSet[i];
     }
 
-    public void setRatingSet(int i, Rating _value) {
+    public void setRatingSet(int i, t1708e.asm.diduduadi.entity.Rating _value) {
         this.ratingSet[i] = _value;
     }
 
 
     /**
-     * Gets the role value for this User.
+     * Gets the roleSet value for this User.
      * 
-     * @return role
+     * @return roleSet
      */
-    public int getRole() {
-        return role;
+    public t1708e.asm.diduduadi.entity.Role[] getRoleSet() {
+        return roleSet;
     }
 
 
     /**
-     * Sets the role value for this User.
+     * Sets the roleSet value for this User.
      * 
-     * @param role
+     * @param roleSet
      */
-    public void setRole(int role) {
-        this.role = role;
+    public void setRoleSet(t1708e.asm.diduduadi.entity.Role[] roleSet) {
+        this.roleSet = roleSet;
+    }
+
+    public t1708e.asm.diduduadi.entity.Role getRoleSet(int i) {
+        return this.roleSet[i];
+    }
+
+    public void setRoleSet(int i, t1708e.asm.diduduadi.entity.Role _value) {
+        this.roleSet[i] = _value;
     }
 
 
@@ -434,7 +442,9 @@ public class User  implements java.io.Serializable {
             ((this.ratingSet==null && other.getRatingSet()==null) || 
              (this.ratingSet!=null &&
               java.util.Arrays.equals(this.ratingSet, other.getRatingSet()))) &&
-            this.role == other.getRole() &&
+            ((this.roleSet==null && other.getRoleSet()==null) || 
+             (this.roleSet!=null &&
+              java.util.Arrays.equals(this.roleSet, other.getRoleSet()))) &&
             ((this.salt==null && other.getSalt()==null) || 
              (this.salt!=null &&
               this.salt.equals(other.getSalt()))) &&
@@ -504,7 +514,17 @@ public class User  implements java.io.Serializable {
                 }
             }
         }
-        _hashCode += getRole();
+        if (getRoleSet() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRoleSet());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRoleSet(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
         if (getSalt() != null) {
             _hashCode += getSalt().hashCode();
         }
@@ -596,10 +616,12 @@ public class User  implements java.io.Serializable {
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("role");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "role"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setFieldName("roleSet");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "roleSet"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://service/", "role"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("salt");

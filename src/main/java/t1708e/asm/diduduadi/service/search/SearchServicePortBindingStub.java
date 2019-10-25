@@ -31,7 +31,9 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "place"));
+
         oper.setReturnClass(Place[].class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -43,7 +45,9 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "post"));
+
         oper.setReturnClass(Post[].class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -82,34 +86,43 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
+
             cls = Comment.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
+
             cls = Image.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
+
             cls = Place.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
+
             cls = Post.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
+
             cls = Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -117,6 +130,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
+
             cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -131,6 +145,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
+
             cls = User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -202,6 +217,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         }
     }
 
+
     public Place[] searchByPlace(java.lang.String arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
@@ -226,6 +242,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         else {
             extractAttachments(_call);
             try {
+
                 return (Place[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (Place[]) org.apache.axis.utils.JavaUtils.convert(_resp, Place[].class);
@@ -260,6 +277,7 @@ public class SearchServicePortBindingStub extends org.apache.axis.client.Stub im
         else {
             extractAttachments(_call);
             try {
+
                 return (Post[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (Post[]) org.apache.axis.utils.JavaUtils.convert(_resp, Post[].class);

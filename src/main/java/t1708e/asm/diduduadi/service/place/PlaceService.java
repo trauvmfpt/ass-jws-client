@@ -7,11 +7,13 @@
 
 package t1708e.asm.diduduadi.service.place;
 
-import t1708e.asm.diduduadi.entity.*;
+
+import t1708e.asm.diduduadi.entity.Place;
 
 public interface PlaceService extends java.rmi.Remote {
-    public Place detailPlace(int arg0) throws java.rmi.RemoteException;
-    public Place[] getListPlace() throws java.rmi.RemoteException;
-    public boolean updatePlace(Place arg0, int arg1) throws java.rmi.RemoteException;
     public boolean createPlace(Place arg0) throws java.rmi.RemoteException;
+    public Place detailPlace(int arg0) throws java.rmi.RemoteException;
+    public boolean updatePlace(Place arg0, int arg1) throws java.rmi.RemoteException;
+    public Place[] getListPlace() throws java.rmi.RemoteException;
+
 }

@@ -12,13 +12,13 @@ public class Comment  implements java.io.Serializable {
 
     private int id;
 
-    private Image image;
+    private t1708e.asm.diduduadi.entity.Image image;
 
-    private Post post;
+    private t1708e.asm.diduduadi.entity.Post post;
 
     private int status;
 
-    private User user;
+    private t1708e.asm.diduduadi.entity.User user;
 
     public Comment() {
     }
@@ -26,10 +26,10 @@ public class Comment  implements java.io.Serializable {
     public Comment(
            java.lang.String content,
            int id,
-           Image image,
-           Post post,
+           t1708e.asm.diduduadi.entity.Image image,
+           t1708e.asm.diduduadi.entity.Post post,
            int status,
-           User user) {
+           t1708e.asm.diduduadi.entity.User user) {
            this.content = content;
            this.id = id;
            this.image = image;
@@ -84,7 +84,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @return image
      */
-    public Image getImage() {
+    public t1708e.asm.diduduadi.entity.Image getImage() {
         return image;
     }
 
@@ -94,7 +94,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @param image
      */
-    public void setImage(Image image) {
+    public void setImage(t1708e.asm.diduduadi.entity.Image image) {
         this.image = image;
     }
 
@@ -104,7 +104,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @return post
      */
-    public Post getPost() {
+    public t1708e.asm.diduduadi.entity.Post getPost() {
         return post;
     }
 
@@ -114,7 +114,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @param post
      */
-    public void setPost(Post post) {
+    public void setPost(t1708e.asm.diduduadi.entity.Post post) {
         this.post = post;
     }
 
@@ -144,7 +144,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @return user
      */
-    public User getUser() {
+    public t1708e.asm.diduduadi.entity.User getUser() {
         return user;
     }
 
@@ -154,7 +154,7 @@ public class Comment  implements java.io.Serializable {
      * 
      * @param user
      */
-    public void setUser(User user) {
+    public void setUser(t1708e.asm.diduduadi.entity.User user) {
         this.user = user;
     }
 
