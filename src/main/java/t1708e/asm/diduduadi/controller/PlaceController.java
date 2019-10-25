@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import t1708e.asm.diduduadi.dto.PlaceDTO;
+import t1708e.asm.diduduadi.dto.PostDTO;
 import t1708e.asm.diduduadi.entity.Place;
 import t1708e.asm.diduduadi.entity.Post;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.post.PostService;
+import t1708e.asm.diduduadi.service.search.SearchService;
+
 import java.rmi.RemoteException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -29,15 +33,16 @@ public class PlaceController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public String detail(@PathVariable int id, Model model) throws RemoteException{
-        Place place = (Place) placeService.detailPlace(id);
+        PlaceDTO place = (PlaceDTO) placeService.detailPlace(id);
+        PostDTO[] postDTOS = postService.getAllPost();
 
-        Post[] listPost = place.getPostSet();
-        List<Post> posts = new ArrayList<>();
-        if (listPost != null){
-            posts = Arrays.asList(listPost);
+        List<PostDTO> posts = new ArrayList<>();
+        if (postDTOS != null){
+            posts = Arrays.asList(postDTOS);
         }
+        List<PostDTO> postDTOS1 =  posts.stream().filter(postDTO -> postDTO.getPlaceId() == place.getId()).collect(Collectors.toList());
         model.addAttribute("place", place);
-        model.addAttribute("posts", posts);
+        model.addAttribute("posts", postDTOS1);
 
         return "place/detail";
     }

@@ -18,9 +18,10 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors().and().csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/places/create", "/posts/create").authenticated()
-                .antMatchers("/**").permitAll()
+//                .antMatchers("/places/create", "/posts/create").authenticated()
+                .antMatchers("*").permitAll()
                 .and()
                 .formLogin()
                 .permitAll()
