@@ -11,12 +11,12 @@ import t1708e.asm.diduduadi.entity.Place;
 import t1708e.asm.diduduadi.entity.Post;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.post.PostService;
-
 import java.rmi.RemoteException;
 import java.util.*;
 
+
 @Controller
-@RequestMapping(value = "/places")
+@RequestMapping(value = "/place")
 public class PlaceController {
 
     @Autowired
@@ -36,6 +36,7 @@ public class PlaceController {
         }
         model.addAttribute("place", place);
         model.addAttribute("posts", posts);
+
         return "place/detail";
     }
 
@@ -45,7 +46,13 @@ public class PlaceController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/create")
-    public String create(){ return "place/form"; }
+    public String create(Place place){ return "place/form"; }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/create")
+    public String store(Place place, BindingResult bindingResult) throws RemoteException {
+        placeService.createPlace(place);
+        return "redirect:/place/list/";
+}
   
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     public String list(Model model) throws RemoteException {

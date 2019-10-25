@@ -4,19 +4,11 @@
 <xsd:import namespace="http://service/" schemaLocation="http://23.96.248.50:9000/place?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-
-<message name="detailPlace">
-<part name="parameters" element="tns:detailPlace"></part>
+<message name="createPlace">
+<part name="parameters" element="tns:createPlace"></part>
 </message>
-<message name="detailPlaceResponse">
-<part name="parameters" element="tns:detailPlaceResponse"></part>
-</message>
-<message name="getListPlace">
-<part name="parameters" element="tns:getListPlace"></part>
-</message>
-<message name="getListPlaceResponse">
-<part name="parameters" element="tns:getListPlaceResponse"></part>
-
+<message name="createPlaceResponse">
+<part name="parameters" element="tns:createPlaceResponse"></part>
 </message>
 <message name="detailPlace">
 <part name="parameters" element="tns:detailPlace"></part>
@@ -30,22 +22,16 @@
 <message name="updatePlaceResponse">
 <part name="parameters" element="tns:updatePlaceResponse"></part>
 </message>
-
-<message name="createPlace">
-<part name="parameters" element="tns:createPlace"></part>
+<message name="getListPlace">
+<part name="parameters" element="tns:getListPlace"></part>
 </message>
-<message name="createPlaceResponse">
-<part name="parameters" element="tns:createPlaceResponse"></part>
+<message name="getListPlaceResponse">
+<part name="parameters" element="tns:getListPlaceResponse"></part>
 </message>
 <portType name="PlaceService">
-<operation name="detailPlace">
-<input wsam:Action="http://service/PlaceService/detailPlaceRequest" message="tns:detailPlace"></input>
-<output wsam:Action="http://service/PlaceService/detailPlaceResponse" message="tns:detailPlaceResponse"></output>
-</operation>
-<operation name="getListPlace">
-<input wsam:Action="http://service/PlaceService/getListPlaceRequest" message="tns:getListPlace"></input>
-<output wsam:Action="http://service/PlaceService/getListPlaceResponse" message="tns:getListPlaceResponse"></output>
-
+<operation name="createPlace">
+<input wsam:Action="http://service/PlaceService/createPlaceRequest" message="tns:createPlace"></input>
+<output wsam:Action="http://service/PlaceService/createPlaceResponse" message="tns:createPlaceResponse"></output>
 </operation>
 <operation name="detailPlace">
 <input wsam:Action="http://service/PlaceService/detailPlaceRequest" message="tns:detailPlace"></input>
@@ -55,18 +41,14 @@
 <input wsam:Action="http://service/PlaceService/updatePlaceRequest" message="tns:updatePlace"></input>
 <output wsam:Action="http://service/PlaceService/updatePlaceResponse" message="tns:updatePlaceResponse"></output>
 </operation>
-
-<operation name="createPlace">
-<input wsam:Action="http://service/PlaceService/createPlaceRequest" message="tns:createPlace"></input>
-<output wsam:Action="http://service/PlaceService/createPlaceResponse" message="tns:createPlaceResponse"></output>
-
+<operation name="getListPlace">
+<input wsam:Action="http://service/PlaceService/getListPlaceRequest" message="tns:getListPlace"></input>
+<output wsam:Action="http://service/PlaceService/getListPlaceResponse" message="tns:getListPlaceResponse"></output>
 </operation>
 </portType>
 <binding name="PlaceServicePortBinding" type="tns:PlaceService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-
-<operation name="detailPlace">
-
+<operation name="createPlace">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -75,9 +57,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-
-<operation name="getListPlace">
-
+<operation name="detailPlace">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -95,9 +75,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-
-<operation name="createPlace">
-
+<operation name="getListPlace">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

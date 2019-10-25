@@ -7,7 +7,11 @@
 
 package t1708e.asm.diduduadi.service.post;
 
-public class PostServicePortBindingStub extends org.apache.axis.client.Stub implements t1708e.asm.diduduadi.service.post.PostService {
+
+import t1708e.asm.diduduadi.entity.*;
+
+public class PostServicePortBindingStub extends org.apache.axis.client.Stub implements PostService {
+
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -26,7 +30,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllPost");
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "post"));
-        oper.setReturnClass(t1708e.asm.diduduadi.entity.Post[].class);
+
+        oper.setReturnClass(Post[].class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -37,7 +43,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "post"));
-        oper.setReturnClass(t1708e.asm.diduduadi.entity.Post.class);
+
+        oper.setReturnClass(Post.class);
+
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -45,7 +53,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatePost");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), t1708e.asm.diduduadi.entity.Post.class, false, false);
+
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), Post.class, false, false);
+
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -57,7 +67,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("deletePost");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), t1708e.asm.diduduadi.entity.Post.class, false, false);
+
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), Post.class, false, false);
+
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -69,7 +81,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createPost");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), t1708e.asm.diduduadi.entity.Post.class, false, false);
+
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "post"), Post.class, false, false);
+
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -112,49 +126,63 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Comment.class;
+
+            cls = Comment.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Image.class;
+
+            cls = Image.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Place.class;
+
+            cls = Place.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Post.class;
+
+            cls = Post.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Rating.class;
+
+            cls = Rating.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.Role.class;
+
+            cls = Role.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = t1708e.asm.diduduadi.entity.User.class;
+
+            cls = User.class;
+
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -225,7 +253,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
         }
     }
 
-    public t1708e.asm.diduduadi.entity.Post[] getAllPost() throws java.rmi.RemoteException {
+
+    public Post[] getAllPost() throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -249,9 +279,11 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.entity.Post[]) _resp;
+
+                return (Post[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.entity.Post[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Post[].class);
+                return (Post[]) org.apache.axis.utils.JavaUtils.convert(_resp, Post[].class);
+
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -259,7 +291,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
-    public t1708e.asm.diduduadi.entity.Post getByIdPost(int arg0) throws java.rmi.RemoteException {
+
+    public Post getByIdPost(int arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -283,9 +317,11 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
-                return (t1708e.asm.diduduadi.entity.Post) _resp;
+
+                return (Post) _resp;
             } catch (java.lang.Exception _exception) {
-                return (t1708e.asm.diduduadi.entity.Post) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.Post.class);
+                return (Post) org.apache.axis.utils.JavaUtils.convert(_resp, Post.class);
+
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -293,7 +329,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
-    public boolean updatePost(t1708e.asm.diduduadi.entity.Post arg0) throws java.rmi.RemoteException {
+
+    public boolean updatePost(Post arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -327,7 +365,9 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
-    public boolean deletePost(t1708e.asm.diduduadi.entity.Post arg0) throws java.rmi.RemoteException {
+
+    public boolean deletePost(Post arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -361,7 +401,8 @@ public class PostServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
-    public boolean createPost(t1708e.asm.diduduadi.entity.Post arg0) throws java.rmi.RemoteException {
+    public boolean createPost(Post arg0) throws java.rmi.RemoteException {
+
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

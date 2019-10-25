@@ -7,13 +7,14 @@
 
 package t1708e.asm.diduduadi.service.rate;
 
-import t1708e.asm.diduduadi.entity.Rating;
-import t1708e.asm.diduduadi.entity.User;
+
+import t1708e.asm.diduduadi.entity.*;
 
 public interface RatingService extends java.rmi.Remote {
-    public Rating[] getAll() throws java.rmi.RemoteException;
+    public Rating[] getAllRate() throws java.rmi.RemoteException;
     public Rating getByUserIdAndPostId(int arg0, int arg1) throws java.rmi.RemoteException;
-    public boolean update(Rating arg0) throws java.rmi.RemoteException;
-    public boolean delete(User arg0) throws java.rmi.RemoteException;
-    public boolean create(Rating arg0) throws java.rmi.RemoteException;
+    public boolean deleteRate(Rating arg0) throws java.rmi.RemoteException;
+    public boolean updateRate(Rating arg0) throws java.rmi.RemoteException;
+    public boolean createRate(Rating arg0) throws java.rmi.RemoteException;
+
 }
