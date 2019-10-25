@@ -156,6 +156,13 @@ public class RatingServicePortBindingStub extends org.apache.axis.client.Stub im
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://service/", "role");
+            cachedSerQNames.add(qName);
+            cls = Role.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
             cls = User.class;
@@ -296,7 +303,6 @@ public class RatingServicePortBindingStub extends org.apache.axis.client.Stub im
   throw axisFaultException;
 }
     }
-
     public boolean deleteRate(Rating arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
