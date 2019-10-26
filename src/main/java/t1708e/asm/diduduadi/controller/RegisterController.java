@@ -1,5 +1,6 @@
 package t1708e.asm.diduduadi.controller;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,7 @@ public class RegisterController {
             return "student/form";
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userService.createUser(user, roleIds);
+        userService.createUser(new Gson().toJson(user), roleIds);
         return "redirect:/login";
     }
 }
