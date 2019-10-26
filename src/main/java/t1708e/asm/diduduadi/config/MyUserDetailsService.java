@@ -1,15 +1,15 @@
 package t1708e.asm.diduduadi.config;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import t1708e.asm.diduduadi.entity.Role;
+import t1708e.asm.diduduadi.dto.UserDTO;
 import t1708e.asm.diduduadi.service.user.UserService;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 
 public class MyUserDetailsService implements UserDetailsService {
 
@@ -18,10 +18,14 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        t1708e.asm.diduduadi.service.user.UserDTO user = null;
+        UserDTO user = null;
         try {
-            user = (t1708e.asm.diduduadi.service.user.UserDTO) userService.getByUserName(s);
+            user = new Gson().fromJson(userService.getByUserName(s),UserDTO.class);
+//            user = new UserDTO();
+//            user.setUsername("Hoang");
+//            user.setPassword("123456");
         } catch (RemoteException e) {
+//        } catch (Exception e) {
             e.printStackTrace();
         }
         UserDetails userDetails =

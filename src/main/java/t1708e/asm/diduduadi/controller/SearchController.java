@@ -1,5 +1,6 @@
 package t1708e.asm.diduduadi.controller;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,13 +28,13 @@ public class SearchController {
     @RequestMapping(method = RequestMethod.GET)
     public String searchAll(@RequestParam("key") String key, Model model) throws RemoteException {
 
-        PostDTO[] postList = searchService.searchByPost(key);
+        PostDTO[] postList = new Gson().fromJson(searchService.searchByPost(key),PostDTO[].class);
         List<PostDTO> a = new ArrayList<PostDTO>();
         if (postList != null){
             a = Arrays.asList(postList);
         }
 
-        PlaceDTO[] placeList = searchService.searchByPlace(key);
+        PlaceDTO[] placeList = new Gson().fromJson(searchService.searchByPlace(key),PlaceDTO[].class);
         model.addAttribute("posts", a);
         model.addAttribute("places", placeList);
         return "search/list";

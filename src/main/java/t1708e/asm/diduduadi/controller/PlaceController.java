@@ -1,6 +1,7 @@
 package t1708e.asm.diduduadi.controller;
 
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import t1708e.asm.diduduadi.dto.PlaceDTO;
 import t1708e.asm.diduduadi.dto.PostDTO;
 import t1708e.asm.diduduadi.entity.Place;
-import t1708e.asm.diduduadi.entity.Post;
 import t1708e.asm.diduduadi.service.place.PlaceService;
 import t1708e.asm.diduduadi.service.post.PostService;
-import t1708e.asm.diduduadi.service.search.SearchService;
+
 
 import java.rmi.RemoteException;
 import java.util.*;
@@ -33,8 +33,8 @@ public class PlaceController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public String detail(@PathVariable int id, Model model) throws RemoteException{
-        PlaceDTO place = (PlaceDTO) placeService.detailPlace(id);
-        PostDTO[] postDTOS = postService.getAllPost();
+        PlaceDTO place = new Gson().fromJson(placeService.detailPlace(id),PlaceDTO.class);
+        PostDTO[] postDTOS = new Gson().fromJson(postService.getAllPost(),PostDTO[].class);
 
         List<PostDTO> posts = new ArrayList<>();
         if (postDTOS != null){
@@ -57,13 +57,13 @@ public class PlaceController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/create")
     public String store(Place place, BindingResult bindingResult) throws RemoteException {
-        placeService.createPlace(place);
+        placeService.createPlace(new Gson().toJson(place));
         return "redirect:/place/list/";
 }
   
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     public String list(Model model) throws RemoteException {
-        PlaceDTO[] placesarr = placeService.getListPlace();
+        PlaceDTO[] placesarr = new Gson().fromJson(placeService.getListPlace(),PlaceDTO[].class);
         List<PlaceDTO> places = new ArrayList<>();
         if (placesarr!= null){
             places = Arrays.asList(placesarr);
