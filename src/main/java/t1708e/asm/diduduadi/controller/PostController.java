@@ -67,4 +67,8 @@ public class PostController {
         postService.createPost(post);
         return "redirect:/";
     }
+    @RequestMapping(method = RequestMethod.GET, value = "/name")
+    public String detail(){
+        return "post/detail";
+    }
 }
