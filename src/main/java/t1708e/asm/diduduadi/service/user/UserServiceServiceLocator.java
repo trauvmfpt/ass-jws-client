@@ -22,7 +22,7 @@ public class UserServiceServiceLocator extends org.apache.axis.client.Service im
     }
 
     // Use to get a proxy class for UserServicePort
-    private java.lang.String UserServicePort_address = "http://23.96.248.50:9000/user";
+    private java.lang.String UserServicePort_address = "http://localhost:9000/user";
 
     public java.lang.String getUserServicePortAddress() {
         return UserServicePort_address;

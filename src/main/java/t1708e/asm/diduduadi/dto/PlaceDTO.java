@@ -7,6 +7,10 @@
 
 package t1708e.asm.diduduadi.dto;
 
+import t1708e.asm.diduduadi.entity.Post;
+
+import java.util.List;
+
 public class PlaceDTO implements java.io.Serializable {
     private String address;
 
@@ -15,6 +19,16 @@ public class PlaceDTO implements java.io.Serializable {
     private String name;
 
     private int status;
+
+    private List<PostDTO> posts;
+
+    public List<PostDTO> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostDTO> posts) {
+        this.posts = posts;
+    }
 
     public PlaceDTO() {
     }

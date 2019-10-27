@@ -58,12 +58,16 @@
                         <!-- Contact Form -->
                         <div class="contact_form_container">
                             <div class="contact_title text-center">Create place</div>
-                            <form action="#" id="contact_form" class="contact_form text-center"
+                            <form action="#" id="contact_form"
                                   th:object="${place}" th:action="@{/place/create}" method="post">
-                                <input type="text" class="contact_form_name input_field" placeholder="Name" required="required"
-                                       data-error="Name is required." th:field="*{name}" id="name">
-                                <input type="text" class="contact_form_name input_field" placeholder="Address" required="required"
-                                       data-error="Address is required." th:field="*{address}" id="address">
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Name</label>
+                                    <input type="text" th:field="${place.name}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Description</label>
+                                    <input type="text" th:field="${place.address}" class="form-control">
+                                </div>
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="form_submit_button button trans_200"
                                             style="display: block;">create place<span></span><span></span><span></span></button>

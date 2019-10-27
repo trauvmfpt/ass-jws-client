@@ -22,7 +22,7 @@ public class CommentServiceServiceLocator extends org.apache.axis.client.Service
     }
 
     // Use to get a proxy class for CommentServicePort
-    private java.lang.String CommentServicePort_address = "http://23.96.248.50:9000/comment";
+    private java.lang.String CommentServicePort_address = "http://localhost:9000/comment";
 
     public java.lang.String getCommentServicePortAddress() {
         return CommentServicePort_address;

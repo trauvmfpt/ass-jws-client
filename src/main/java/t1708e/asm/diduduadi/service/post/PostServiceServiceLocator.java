@@ -22,7 +22,7 @@ public class PostServiceServiceLocator extends org.apache.axis.client.Service im
     }
 
     // Use to get a proxy class for PostServicePort
-    private java.lang.String PostServicePort_address = "http://23.96.248.50:9000/post";
+    private java.lang.String PostServicePort_address = "http://localhost:9000/post";
 
     public java.lang.String getPostServicePortAddress() {
         return PostServicePort_address;

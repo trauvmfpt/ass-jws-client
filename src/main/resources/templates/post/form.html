@@ -24,6 +24,15 @@
           th:href="@{/styles/responsive.css}" >
     <link rel="stylesheet" type="text/css" href="../../static/styles/contact_styles.css"
           th:href="@{/styles/contact_styles.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/styles/custom-style.css"
+          th:href="@{/styles/custom-style.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/simditor-2.3.23/styles/simditor.css"
+          th:href="@{/simditor-2.3.23/styles/simditor.css}" >
+    <script type="text/javascript" src="../../static/simditor-2.3.23/site/assets/scripts/jquery.min.js" th:src="@{/simditor-2.3.23/site/assets/scripts/jquery.min.js}"></script>
+    <script type="text/javascript" src="../../static/simditor-2.3.23/site/assets/scripts/module.js" th:src="@{/simditor-2.3.23/site/assets/scripts/module.js}"></script>
+    <script type="text/javascript" src="../../static/simditor-2.3.23/site/assets/scripts/hotkeys.js" th:src="@{/simditor-2.3.23/site/assets/scripts/hotkeys.js}"></script>
+    <script type="text/javascript" src="../../static/simditor-2.3.23/site/assets/scripts/uploader.js" th:src="@{/simditor-2.3.23/site/assets/scripts/uploader.js}"></script>
+    <script type="text/javascript" src="../../static/simditor-2.3.23/lib/simditor.js" th:src="@{/simditor-2.3.23/site/assets/scripts/simditor.js}"></script>
 </head>
 
 <body>
@@ -45,22 +54,31 @@
                         <!-- Contact Form -->
                         <div class="contact_form_container">
                             <div class="contact_title text-center">Create post</div>
-                            <form enctype="multipart/form-data" action="/posts/create" method="post" id="contact_form" class="contact_form text-center">
-                                <div class="search_item">
-                                    <div>Place</div>
-                                    <select name="placeId" id="" class="dropdown_item_select search_input">
+                            <form enctype="multipart/form-data" action="/posts/create" method="post" id="contact_form">
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Title</label>
+                                    <input type="text" name="title" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Description</label>
+                                    <input type="text" name="description" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Place</label>
+                                    <select name="placeId" id="" class="form form-control">
                                         <option selected disabled>Choose Place</option>
-                                        <option th:each="place : ${places}" th:value="${place.id}" th:text="${place.address}"></option>
+                                        <option th:each="place : ${places}" th:value="${place.id}" th:text="${place.name}"></option>
                                     </select>
                                 </div>
-                                <div>
-                                    <textarea id="contact_form_message" class="text_field contact_form_message" name="information" rows="4"
-                                              placeholder="Information" required="required" data-error="Write the information."></textarea>
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Content</label>
+                                    <textarea required name="information" id="editor" placeholder="Write Something..." autofocus></textarea>
                                 </div>
-                                <div class="search_item">
-                                    <div>Image</div>
-                                    <input class="button" type="file" multiple="multiple" name="file" value="Upload Image">
+                                <div class="form-group">
+                                    <label style="color: white; font-size: 18px">Images</label>
+                                    <input class="form-control" id="add_images" type="file" multiple="multiple" name="file">
                                 </div>
+                                <div class="preview_images hidden"></div>
 
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="form_submit_button button trans_200"
@@ -91,6 +109,36 @@
         th:src="@{/plugins/easing/easing.js}"></script>
 <script src="../../static/js/custom.js"
         th:src="@{/js/custom.js}"></script>
+
+<script>
+    var editor = new Simditor({
+        textarea: $('#editor')
+    });
+
+    $(function() {
+        var imagesPreview = function(input, display_images) {
+            if (input.files) {
+                var filesAmount = input.files.length;
+                for (i = 0; i < filesAmount; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $($.parseHTML('<img>')).attr('src', e.target.result).appendTo(display_images);
+                        $("img").addClass("preview_image");
+                    }
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+        };
+        $('#add_images').on('change', function() {
+            $('.preview_images').removeClass("hidden");
+            imagesPreview(this, 'div.preview_images');
+        });
+        $(":reset").click(function (){
+            $(".preview_images").addClass('hidden');
+            $(".preview_image").remove();
+        });
+    });
+</script>
 
 </body>
 

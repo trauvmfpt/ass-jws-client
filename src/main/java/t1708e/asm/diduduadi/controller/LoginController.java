@@ -18,17 +18,6 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String login() throws RemoteException {
-        //        List<User> users = Arrays.asList();
-        User user = new User();
-        Integer[] a = {1};
-        user.setAddress("Ha Noi");
-        user.setAge(18);
-        user.setEmail("user1@user.com");
-        user.setGender(1);
-        user.setUsername("userdemo1");
-        user.setPassword("123456");
-        user.setName("new user");
-//        userService.createUser(user,a);
         return "authen/login";
     }
 }
