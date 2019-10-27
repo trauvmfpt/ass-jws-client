@@ -30,6 +30,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://service/", "user"));
+
         oper.setReturnClass(User.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -37,6 +38,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+
         oper.setName("updateUser");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "user"), User.class, false, false);
         param.setOmittable(true);
@@ -50,6 +52,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
+
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -63,8 +66,12 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createUser");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "user"), User.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://service/", "user"), t1708e.asm.diduduadi.entity.User.class, false, false);
         param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer[].class, false, false);
+        param.setOmittable(true);
+        param.setNillable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer[].class, false, false);
         param.setOmittable(true);
@@ -87,6 +94,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
                       new javax.xml.namespace.QName("http://service/", "NoSuchAlgorithmException"), 
                       true
                      ));
+
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -146,6 +154,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://service/", "comment");
             cachedSerQNames.add(qName);
+
             cls = Comment.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -153,6 +162,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "image");
             cachedSerQNames.add(qName);
+
             cls = Image.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -174,6 +184,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "place");
             cachedSerQNames.add(qName);
+
             cls = Place.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -181,6 +192,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "post");
             cachedSerQNames.add(qName);
+
             cls = Post.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -188,6 +200,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "rating");
             cachedSerQNames.add(qName);
+
             cls = Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -195,6 +208,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "role");
             cachedSerQNames.add(qName);
+
             cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
@@ -209,7 +223,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
             qName = new javax.xml.namespace.QName("http://service/", "user");
             cachedSerQNames.add(qName);
-            cls = User.class;
+            cls = t1708e.asm.diduduadi.entity.User.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -280,6 +294,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         }
     }
 
+
     public User detail(int arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
@@ -304,6 +319,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
+
                 return (User) _resp;
             } catch (java.lang.Exception _exception) {
                 return (User) org.apache.axis.utils.JavaUtils.convert(_resp, User.class);
@@ -313,6 +329,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
   throw axisFaultException;
 }
     }
+
 
     public boolean updateUser(User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
@@ -326,6 +343,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "updateUser"));
 
         setRequestHeaders(_call);
@@ -338,15 +356,16 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (t1708e.asm.diduduadi.entity.User[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (t1708e.asm.diduduadi.entity.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, t1708e.asm.diduduadi.entity.User[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
     }
+
 
     public User[] getList() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
@@ -364,6 +383,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 
         setRequestHeaders(_call);
         setAttachments(_call);
+
  try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
@@ -382,6 +402,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
+
     public boolean createUser(User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException, InvalidKeySpecException, NoSuchAlgorithmException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
@@ -394,6 +415,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "createUser"));
 
         setRequestHeaders(_call);
@@ -406,6 +428,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
+
                 return ((java.lang.Boolean) _resp).booleanValue();
             } catch (java.lang.Exception _exception) {
                 return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
@@ -427,6 +450,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
 }
     }
 
+
     public User login(User arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
@@ -439,6 +463,7 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+
         _call.setOperationName(new javax.xml.namespace.QName("http://service/", "login"));
 
         setRequestHeaders(_call);
@@ -451,9 +476,54 @@ public class UserServicePortBindingStub extends org.apache.axis.client.Stub impl
         else {
             extractAttachments(_call);
             try {
-                return (User) _resp;
+                return ((java.lang.Boolean) _resp).booleanValue();
             } catch (java.lang.Exception _exception) {
-                return (User) org.apache.axis.utils.JavaUtils.convert(_resp, User.class);
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof t1708e.asm.diduduadi.service.user.InvalidKeySpecException) {
+              throw (t1708e.asm.diduduadi.service.user.InvalidKeySpecException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof t1708e.asm.diduduadi.service.user.NoSuchAlgorithmException) {
+              throw (t1708e.asm.diduduadi.service.user.NoSuchAlgorithmException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public boolean delete(t1708e.asm.diduduadi.entity.User arg0) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[5]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service/", "delete"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {arg0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

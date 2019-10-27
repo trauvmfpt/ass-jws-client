@@ -15,5 +15,6 @@ public interface UserService extends java.rmi.Remote {
     public User[] getList() throws java.rmi.RemoteException;
     public boolean createUser(User arg0, java.lang.Integer[] arg1) throws java.rmi.RemoteException, InvalidKeySpecException, NoSuchAlgorithmException;
     public User login(User arg0) throws java.rmi.RemoteException;
+
     public boolean delete(User arg0) throws java.rmi.RemoteException;
 }

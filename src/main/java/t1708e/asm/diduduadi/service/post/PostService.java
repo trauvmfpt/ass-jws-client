@@ -7,7 +7,9 @@
 
 package t1708e.asm.diduduadi.service.post;
 
-import t1708e.asm.diduduadi.entity.*;
+
+import t1708e.asm.diduduadi.entity.Post;
+
 
 public interface PostService extends java.rmi.Remote {
     public Post[] getAllPost() throws java.rmi.RemoteException;
