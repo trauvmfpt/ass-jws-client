@@ -1563,6 +1563,7 @@ section
 .reviews_container
 {
 	margin-top: 61px;
+	margin-bottom: 61px;
 }
 .review
 {
@@ -1934,4 +1935,8 @@ section
 .footer_nav_item a:hover
 {
 	color: #FFFFFF;
+}
+
+textarea {
+	resize: none;
 }

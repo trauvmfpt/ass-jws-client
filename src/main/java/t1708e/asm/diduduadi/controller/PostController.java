@@ -69,4 +69,8 @@ public class PostController {
         postService.createPost(new Gson().toJson(post));
         return "redirect:/";
     }
+    @RequestMapping(method = RequestMethod.GET, value = "/name")
+    public String detail(){
+        return "post/detail";
+    }
 }
