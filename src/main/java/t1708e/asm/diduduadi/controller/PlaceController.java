@@ -34,15 +34,16 @@ public class PlaceController {
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public String detail(@PathVariable int id, Model model) throws RemoteException{
         PlaceDTO place = new Gson().fromJson(placeService.detailPlace(id),PlaceDTO.class);
-        PostDTO[] postDTOS = new Gson().fromJson(postService.getAllPost(),PostDTO[].class);
 
-        List<PostDTO> posts = new ArrayList<>();
-        if (postDTOS != null){
-            posts = Arrays.asList(postDTOS);
+        PlaceDTO[] placesarr = new Gson().fromJson(placeService.getListPlace(),PlaceDTO[].class);
+        List<PlaceDTO> places = new ArrayList<>();
+        if (placesarr!= null){
+            places = Arrays.asList(placesarr);
         }
-        List<PostDTO> postDTOS1 =  posts.stream().filter(postDTO -> postDTO.getPlaceId() == place.getId()).collect(Collectors.toList());
+
+        model.addAttribute("places", places);
         model.addAttribute("place", place);
-        model.addAttribute("posts", postDTOS1);
+        model.addAttribute("posts", place.getPosts());
 
         return "place/detail";
     }
@@ -53,7 +54,12 @@ public class PlaceController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/create")
-    public String create(Place place){ return "place/form"; }
+    public String create(Model model)
+    {
+        model.addAttribute("place", new Place());
+        return "place/form";
+    }
+
 
     @RequestMapping(method = RequestMethod.POST, value = "/create")
     public String store(Place place, BindingResult bindingResult) throws RemoteException {
@@ -67,10 +73,6 @@ public class PlaceController {
         List<PlaceDTO> places = new ArrayList<>();
         if (placesarr!= null){
             places = Arrays.asList(placesarr);
-        }
-        System.out.println(places.size());
-        for (int i = 0; i < places.size(); i++){
-            System.out.println(places.get(i).getName() + ' ' + places.get(i).getAddress() +  ' ' + places.get(i).getId() );
         }
         model.addAttribute("places", places);
         return "place/list";

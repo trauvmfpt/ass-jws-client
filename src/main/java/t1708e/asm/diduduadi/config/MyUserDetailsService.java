@@ -20,12 +20,8 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserDTO user = null;
         try {
-            user = new Gson().fromJson(userService.getByUserName(s),UserDTO.class);
-//            user = new UserDTO();
-//            user.setUsername("Hoang");
-//            user.setPassword("123456");
+            user = new Gson().fromJson(userService.getByUserName(s), UserDTO.class);
         } catch (RemoteException e) {
-//        } catch (Exception e) {
             e.printStackTrace();
         }
         UserDetails userDetails =

@@ -7,14 +7,10 @@
 
 package t1708e.asm.diduduadi.service.post;
 
-
-import t1708e.asm.diduduadi.entity.Post;
-
-
 public interface PostService extends java.rmi.Remote {
-    public Post[] getAllPost() throws java.rmi.RemoteException;
-    public Post getByIdPost(int arg0) throws java.rmi.RemoteException;
-    public boolean updatePost(Post arg0) throws java.rmi.RemoteException;
-    public boolean deletePost(Post arg0) throws java.rmi.RemoteException;
-    public boolean createPost(Post arg0) throws java.rmi.RemoteException;
+    public boolean createPost(java.lang.String arg0) throws java.rmi.RemoteException;
+    public java.lang.String getAllPost() throws java.rmi.RemoteException;
+    public java.lang.String getByIdPost(int arg0) throws java.rmi.RemoteException;
+    public boolean updatePost(java.lang.String arg0) throws java.rmi.RemoteException;
+    public boolean deletePost(java.lang.String arg0) throws java.rmi.RemoteException;
 }

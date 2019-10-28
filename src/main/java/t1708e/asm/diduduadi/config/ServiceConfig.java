@@ -2,6 +2,9 @@ package t1708e.asm.diduduadi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import t1708e.asm.diduduadi.service.comment.CommentService;
 import t1708e.asm.diduduadi.service.comment.CommentServiceServiceLocator;
 import t1708e.asm.diduduadi.service.image.ImageService;
@@ -65,5 +68,10 @@ public class ServiceConfig {
         PostServiceServiceLocator locator = new PostServiceServiceLocator();
         PostService postService = locator.getPostServicePort();
         return postService;
+    }
+
+    @Bean
+    public SpringSecurityDialect springSecurityDialect() {
+        return new SpringSecurityDialect();
     }
 }
