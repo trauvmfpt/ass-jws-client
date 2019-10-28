@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable();
         http.authorizeRequests()
-//                .antMatchers("/places/create", "/posts/create").authenticated()
+                .antMatchers("/place/create", "/post/create").authenticated()
                 .antMatchers("*").permitAll()
                 .and()
                 .formLogin()
@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .deleteCookies("JSESSIONID")
-                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/place/list")
                 .clearAuthentication(true)
                 .permitAll();
     }

@@ -7,16 +7,68 @@
 
 package t1708e.asm.diduduadi.dto;
 
+import t1708e.asm.diduduadi.entity.Post;
+
+import java.util.List;
+
 public class PostDTO implements java.io.Serializable {
     private int id;
 
     private String info;
 
     private int placeId;
+    private String title;
+    private String description;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     private int status;
 
-    private int userId;
+    private String userName;
+
+    private List<ImageDTO> images;
+
+    private List<CommentDTO> comments;
+
+    private List<RatingDTO> ratings;
+
+    public List<ImageDTO> getImages() {
+        return images;
+    }
+
+    public void setImages(List<ImageDTO> images) {
+        this.images = images;
+    }
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
+    }
+
+    public List<RatingDTO> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<RatingDTO> ratings) {
+        this.ratings = ratings;
+    }
 
     public PostDTO() {
     }
@@ -26,12 +78,12 @@ public class PostDTO implements java.io.Serializable {
            String info,
            int placeId,
            int status,
-           int userId) {
+           String username) {
            this.id = id;
            this.info = info;
            this.placeId = placeId;
            this.status = status;
-           this.userId = userId;
+           this.userName = username;
     }
 
 
@@ -120,18 +172,18 @@ public class PostDTO implements java.io.Serializable {
      *
      * @return userId
      */
-    public int getUserId() {
-        return userId;
+    public String  getUserName() {
+        return userName;
     }
 
 
     /**
      * Sets the userId value for this PostDTO.
      *
-     * @param userId
+     * @param userName
      */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(String userName) {
+        this.userName = userName;
     }
 
     private Object __equalsCalc = null;
@@ -152,7 +204,7 @@ public class PostDTO implements java.io.Serializable {
               this.info.equals(other.getInfo()))) &&
             this.placeId == other.getPlaceId() &&
             this.status == other.getStatus() &&
-            this.userId == other.getUserId();
+            this.userName == other.getUserName();
         __equalsCalc = null;
         return _equals;
     }
@@ -170,7 +222,7 @@ public class PostDTO implements java.io.Serializable {
         }
         _hashCode += getPlaceId();
         _hashCode += getStatus();
-        _hashCode += getUserId();
+        _hashCode += getUserName().hashCode();
         __hashCodeCalc = false;
         return _hashCode;
     }

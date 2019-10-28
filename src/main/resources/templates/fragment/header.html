@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,6 +46,8 @@
                             <div class="user_box ml-auto">
                                 <div class="user_box_login user_box_link"><a th:href="@{/login}">login</a></div>
                                 <div class="user_box_register user_box_link"><a th:href="@{/register}">register</a></div>
+                                <div class="user_box_login user_box_link" id="loggedInUser"><a style="color: yellow" sec:authentication="name"></a></div>
+                                <div class="user_box_link" id="logoutBtn"><a th:href="@{/logout}">Logout</a></div>
                             </div>
                         </div>
                     </div>
@@ -129,9 +133,9 @@
                  data-image-src="../../static/images/blog_background.jpg">
                 <img class="home_background parallax-window" th:src="@{/images/blog_background.jpg}">
             </div>
-            <div class="home_content">
+            <div class="home_content" style="text-align: center">
                 <div class="home_title" th:text="${title}">the blog</div>
-                <div></div>
+                <div style="text-align: center; color: white; font-size: 18px" th:text="${description}">the blog</div>
             </div>
         </div>
 
@@ -149,7 +153,6 @@
             th:src="@{/plugins/easing/easing.js}"></script>
     <script src="../../static/js/custom.js"
             th:src="@{/js/custom.js}"></script>
-
 </body>
 </html>
 

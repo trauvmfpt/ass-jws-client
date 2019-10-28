@@ -34,45 +34,31 @@
 <body>
 
 <div class="super_container">
-    <div th:replace="fragment/header :: header(title='PLACE')"></div> <!-- pass place name here -->
+    <div th:replace="fragment/header :: header(title= ${place.name}, description = ${place.address})"></div>
 
     <div layout:fragment="content">
         <div class="blog" style="padding-top: 50px;" th:if="${place != null}">
             <div class="container">
-                <div class="intro" style="padding: 60px;">
-                    <div class="intro_title" style="color: black;" th:text="${place.name}"></div>
-                    <div class="intro_text" th:text="${place.address}"></div>
-                </div>
                 <div class="row">
-
-                    <!-- Blog Content -->
-
                     <div class="col-lg-8" >
-
-                        <div class="blog_post_container" th:if="${posts != null }" th:each="post: ${posts}">
-
-                            <!-- pass post data here -->
-
+                        <div class="blog_post_container" style="border-bottom: 1px solid; padding-bottom: 30px; margin-bottom: 30px" th:if="${posts != null }" th:each="post: ${posts}">
                             <div class="blog_post">
+                                <div class="blog_post_text">
+                                    <h2 style="margin-bottom: 20px"><a style="color: black" th:text="${post.title}" th:href="@{/posts/{id}(id = ${post.id})}"></a></h2>
+                                </div>
                                 <div class="blog_post_image">
-                                    <img th:src="${post.imageSet[0]}" alt="https://unsplash.com/@anniespratt">
-<!--                                    <div class="blog_post_date d-flex flex-column align-items-center justify-content-center">-->
-<!--                                        <div class="blog_post_day">01</div>-->
-<!--                                        <div class="blog_post_month">Dec, 2017</div>-->
-<!--                                    </div>-->
+                                    <img th:src="${post.getImages().get(0).getSource()}">
+                                </div>
+                                <div class="blog_post_text">
+                                    <div th:utext="${post.description}"></div>
                                 </div>
                                 <div class="blog_post_meta">
                                     <ul>
-                                        <li class="blog_post_meta_item" th:text="${post.user.name}"><a href="">by USER</a></li> <!-- pass guide/user name here -->
-<!--                                        <li class="blog_post_meta_item"><a href="">3 Comments</a></li> &lt;!&ndash; pass comment count here &ndash;&gt;-->
+                                        <li class="blog_post_meta_item" style="font-size: 18px; font-weight: bold;" th:text="${'By ' + post.getUserName()}"></li>
                                     </ul>
                                 </div>
-                                <div class="blog_post_text"> <!-- pass post info here -->
-                                    <p th:text="${post.info}"></p>
-                                </div>
-                                <div class="blog_post_link"><a href="#">read more</a></div> <!-- link to detail post -->
+                                <div class="blog_post_link"><a th:href="@{/posts/{id}(id = ${post.id})}">read more</a></div> <!-- link to detail post -->
                             </div>
-
                         </div>
                     </div>
 
@@ -110,30 +96,11 @@
                             </form>
                         </div>
 
-                        <!-- Sidebar Archives -->
-                        <div class="sidebar_archives">
-                            <div class="sidebar_title">Archives</div>
-                            <div class="sidebar_list">
-                                <ul>
-                                    <li><a href="#">March 2017</a></li>
-                                    <li><a href="#">April 2017</a></li>
-                                    <li><a href="#">May 2017</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Archives -->
                         <div class="sidebar_categories">
-                            <div class="sidebar_title">Categories</div>
-                            <div class="sidebar_list">
-                                <ul>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Exotic Destinations</a></li>
-                                    <li><a href="#">City Breaks</a></li>
-                                    <li><a href="#">Travel Tips</a></li>
-                                    <li><a href="#">Lifestyle & Travel</a></li>
-                                    <li><a href="#">City Breaks</a></li>
-                                    <li><a href="#">Uncategorized</a></li>
+                            <div class="sidebar_title">Places</div>
+                            <div class="sidebar_list" style="margin-top: 10px">
+                                <ul th:each="place : ${places}">
+                                    <li><a th:href="@{/place/{id}(id = ${place.id})}" th:text="${place.getName()}"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -143,59 +110,16 @@
                         <div class="sidebar_latest_posts">
                             <div class="sidebar_title">Latest Posts</div>
                             <div class="latest_posts_container">
-                                <ul>
-
+                                <ul th:if="${posts != null}" th:each="post : ${posts}">
                                     <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_1.jpg" alt=""></a>
+                                    <li class="latest_post clearfix" style="border-bottom: 1px solid; padding-bottom: 10px; margin-bottom: 10px">
+                                        <div class="latest_post_image" style="max-width: 100px; margin-right: 10px">
+                                            <a href="#"><img style="max-width: 100%" th:src="${post.getImages().get(0).getSource()}" alt=""></a>
                                         </div>
                                         <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">A simple blog post</a></div>
+                                            <div class="latest_post_title trans_200"><a th:href="@{/posts/{id}(id = ${post.id})}" th:text="${post.title}"></a></div>
                                             <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">Dream destination for you</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">Tips to travel light</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_4.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">How to pick your vacation</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
+                                                <div class="latest_post_author trans_200"><a href="#" th:text="${'By ' + post.getUserName()}"></a></div>
                                                 <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
                                             </div>
                                         </div>
@@ -206,44 +130,6 @@
                         </div>
 
                         <!-- Sidebar Gallery -->
-                        <div class="sidebar_gallery">
-                            <div class="sidebar_title">Instagram</div>
-                            <div class="gallery_container">
-                                <ul class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixlib=rb-0.3.5&s=c0996cd16eda8c6f54c398de02d03cd3&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_1.jpg" alt="https://unsplash.com/@mantashesthaven">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1495162048225-6b3b37b8a69e?ixlib=rb-0.3.5&s=861dd3c7b9d3e735d7fd7cbb1eefed64&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_2.jpg" alt="https://unsplash.com/@kensuarez">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1502646275263-04be86afa386?ixlib=rb-0.3.5&s=682a41d7d9bf6e3feabc73a5fdd61dd2&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_3.jpg" alt="https://unsplash.com/@jakobowens1">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1484820301304-0b43512779dc?ixlib=rb-0.3.5&s=7a3393e9f507fb4718c36337a8014c52&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_4.jpg" alt="https://unsplash.com/@seefromthesky">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1490380169520-0a4b88d52565?ixlib=rb-0.3.5&s=7e6b68b1911fb4ffeea4c0750b8a5269&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_5.jpg" alt="https://unsplash.com/@deannaritchie">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1504434026032-a7e440a30b68?ixlib=rb-0.3.5&s=2cc35bf903b78ba4f7f7ed69bc2abe3f&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_6.jpg" alt="https://unsplash.com/@benobro">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
