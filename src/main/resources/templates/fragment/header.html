@@ -44,10 +44,14 @@
                                 </ul>
                             </div>
                             <div class="user_box ml-auto">
-                                <div class="user_box_login user_box_link"><a th:href="@{/login}">login</a></div>
-                                <div class="user_box_register user_box_link"><a th:href="@{/register}">register</a></div>
-                                <div class="user_box_login user_box_link" id="loggedInUser"><a style="color: yellow" sec:authentication="name"></a></div>
-                                <div class="user_box_link" id="logoutBtn"><a th:href="@{/logout}">Logout</a></div>
+                                <div th:if="${#authentication.getName() == 'anonymousUser'}">
+                                    <div class="user_box_login user_box_link"><a th:href="@{/login}">login</a></div>
+                                    <div class="user_box_register user_box_link"><a th:href="@{/register}">register</a></div>
+                                </div>
+                                <div th:if="${#authentication.getName() != 'anonymousUser'}">
+                                    <div class="user_box_login user_box_link" id="loggedInUser"><a style="color: yellow" th:text="${#authentication.getName()}"></a></div>
+                                    <div class="user_box_link" id="logoutBtn"><a th:href="@{/logout}">Logout</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>

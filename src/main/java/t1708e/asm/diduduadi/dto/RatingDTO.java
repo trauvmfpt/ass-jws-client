@@ -18,6 +18,26 @@ public class RatingDTO implements java.io.Serializable {
 
     private int userId;
 
+    private boolean status;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public RatingDTO() {
     }
 

@@ -19,16 +19,23 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserDTO user = null;
+        String[] rolesArray = new String[0];
         try {
             user = new Gson().fromJson(userService.getByUserName(s), UserDTO.class);
+            rolesArray = new String[user.getRole().size()];
+            rolesArray = user.getRole().toArray(rolesArray);
         } catch (RemoteException e) {
             e.printStackTrace();
+            user = new UserDTO();
+            user.setUsername("null");
+            user.setPassword("null");
         }
+
         UserDetails userDetails =
                 User.builder()
                         .username(user.getUsername())
                         .password(user.getPassword())
-                        .roles("guide")
+                        .roles(rolesArray)
                         .build();
         return userDetails;
     }

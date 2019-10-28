@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import t1708e.asm.diduduadi.dto.PlaceDTO;
+import t1708e.asm.diduduadi.dto.PostDTO;
 import t1708e.asm.diduduadi.dto.UserDTO;
 import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.place.PlaceService;
@@ -93,7 +94,9 @@ public class PostController {
         return "redirect:/place/" + placeId;
     }
     @RequestMapping(method = RequestMethod.GET,  value = "/{id}")
-    public String detail(@PathVariable int id, Model model){
+    public String detail(@PathVariable int id, Model model) throws RemoteException {
+        PostDTO postDTO = new Gson().fromJson(postService.getByIdPost(id),PostDTO.class);
+        model.addAttribute("post", postDTO);
         return "post/detail";
     }
 }

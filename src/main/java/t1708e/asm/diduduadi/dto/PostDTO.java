@@ -40,6 +40,20 @@ public class PostDTO implements java.io.Serializable {
 
     private String userName;
 
+    private int userId;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     private List<ImageDTO> images;
 
     private List<CommentDTO> comments;
