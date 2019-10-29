@@ -15,36 +15,70 @@
     <link href="../../static/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
           th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.css"
-          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}" >
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
     <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"
-          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}" >
+          th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
     <link rel="stylesheet" type="text/css" href="../../static/plugins/OwlCarousel2-2.2.1/animate.css"
-          th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}" >
+          th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}">
     <link rel="stylesheet" type="text/css" href="../../static/plugins/colorbox/colorbox.css"
-          th:href="@{/plugins/colorbox/colorbox.css}" >
+          th:href="@{/plugins/colorbox/colorbox.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/main_styles.css"
-          th:href="@{/styles/main_styles.css}" >
+          th:href="@{/styles/main_styles.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/responsive.css"
-          th:href="@{/styles/responsive.css}" >
+          th:href="@{/styles/responsive.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/single_listing_styles.css"
-          th:href="@{/styles/single_listing_styles.css}" >
+          th:href="@{/styles/single_listing_styles.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/single_listing_responsive.css"
-          th:href="@{/styles/single_listing_responsive.css}" >
+          th:href="@{/styles/single_listing_responsive.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/contact_styles.css"
-          th:href="@{/styles/contact_styles.css}" >
+          th:href="@{/styles/contact_styles.css}">
     <link rel="stylesheet" type="text/css" href="../../static/styles/contact_responsive.css"
-          th:href="@{/styles/contact_responsive.css}" >
+          th:href="@{/styles/contact_responsive.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #myCarousel .list-inline {
+            white-space: nowrap;
+        }
+
+        #myCarousel .carousel-indicators {
+            position: static;
+            left: initial;
+            width: initial;
+            margin-left: initial;
+            padding: 20px;
+        }
+
+        #myCarousel .carousel-indicators > li {
+            width: initial;
+            height: initial;
+            text-indent: initial;
+        }
+
+        #myCarousel .carousel-indicators > li.active img {
+            opacity: 0.7;
+        }
+
+        .fa-thumbs-up {
+            font-size: 50px;
+            margin-top: 30px;
+        }
+
+        .rating_numbers {
+            margin-left: 1%;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="super_container">
-    <div th:replace="fragment/header :: header(title='POST')"></div> <!-- pass place name here -->
+    <div th:replace="fragment/header :: header(title= ${post.getTitle()})"></div> <!-- pass place name here -->
 
     <div layout:fragment="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="super_container">
                     <div class="single_listing">
 
                         <!-- Hotel Info -->
@@ -52,205 +86,80 @@
                         <div class="hotel_info">
 
                             <!-- Title -->
-                            <div class="hotel_title_container d-flex flex-lg-row flex-column">
-                                <div class="hotel_title_content">
-                                    <h1 class="hotel_title">Grand Hotel Eurostar</h1> <!-- pass place name here -->
-                                    <div class="hotel_location">345 677 Gran</div> <!-- pass place address here -->
-                                </div>
-                            </div>
 
-                            <!-- Listing Image -->
+                            <div class="container py-2">
+                                <div class="row">
+                                    <div class="col-md-12" id="slider">
+                                        <div id="myCarousel" class="carousel slide">
+                                            <!-- main slider carousel items -->
+                                            <div class="carousel-inner">
+                                                <div th:each="img,iter : ${post.getImages()}" th:if="${iter.index == 0}"
+                                                     th:class="${'active carousel-item'}"
+                                                     th:data-slide-number="${iter.index}">
+                                                    <img th:data-id="${img.getId()}" th:src="${img.getSource()}"
+                                                         class="img-fluid big_image">
+                                                </div>
+                                                <div th:each="img,iter : ${post.getImages()}" th:if="${iter.index != 0}"
+                                                     th:class="${'carousel-item'}" th:data-slide-number="${iter.index}">
+                                                    <img th:data-id="${img.getId()}" th:src="${img.getSource()}"
+                                                         class="img-fluid big_image">
+                                                </div>
+                                            </div>
 
-<!--                            <div th:if="${not post.imageSet.isEmpty()}">-->
-<!--                                <div class="hotel_image">-->
-<!--                                    <a-->
-<!--                                       data-toggle="modal" data-target="#modal"-->
-<!--                                       th:attr="data-target='#modal'+${post.imageSet[0].id }">-->
-<!--                                        <img th:src="${post.imageSet[0].source}" alt="">-->
-<!--                                    </a>-->
-
-<!--                                    <div class="hotel_review_container d-flex flex-column align-items-center justify-content-center">-->
-<!--                                        <div class="hotel_review">-->
-<!--                                            <div class="hotel_review_content">-->
-<!--                                                <div class="hotel_review_title">very good</div>-->
-<!--                                                <div class="hotel_review_subtitle">100 comments</div> &lt;!&ndash; pass comment count here &ndash;&gt;-->
-<!--                                            </div>-->
-<!--                                            <div class="hotel_review_rating text-center">83</div> &lt;!&ndash; pass rating count here &ndash;&gt;-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="hotel_gallery" th:if="${#lists.size(posts.imageSet)>1}">-->
-<!--                                    <div class="hotel_slider_container">-->
-<!--                                        <div class="owl-carousel owl-theme hotel_slider">-->
-
-<!--                                            &lt;!&ndash; Hotel Gallery Slider Item &ndash;&gt;-->
-<!--                                            <div class="owl-item" th:each="image,iter : ${post.imageSet}">-->
-<!--                                                <a class="colorbox cboxElement"-->
-<!--                                                   data-toggle="modal" data-target="#modal"-->
-<!--                                                   th:attr="data-target='#modal'+${image.id }"-->
-<!--                                                   th:if="${not iter.first}">-->
-<!--                                                    <img th:href="${image.source}" alt="">-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-
-<!--                                        &lt;!&ndash; Hotel Slider Nav - Prev &ndash;&gt;-->
-<!--                                        <div class="hotel_slider_nav hotel_slider_prev">-->
-<!--                                            <svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-<!--                                                 width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">-->
-<!--											<defs>-->
-<!--												<linearGradient id='hotel_grad_prev'>-->
-<!--													<stop offset='0%' stop-color='#fa9e1b'/>-->
-<!--                                                    <stop offset='100%' stop-color='#8d4fff'/>-->
-<!--												</linearGradient>-->
-<!--											</defs>-->
-<!--                                                <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z-->
-<!--											M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571-->
-<!--											C22.545,2,26,5.541,26,9.909V23.091z"/>-->
-<!--                                                <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219-->
-<!--											11.042,18.219 "/>-->
-<!--										</svg>-->
-<!--                                        </div>-->
-
-<!--                                        &lt;!&ndash; Hotel Slider Nav - Next &ndash;&gt;-->
-<!--                                        <div class="hotel_slider_nav hotel_slider_next">-->
-<!--                                            <svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-<!--                                                 width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">-->
-<!--											<defs>-->
-<!--												<linearGradient id='hotel_grad_next'>-->
-<!--													<stop offset='0%' stop-color='#fa9e1b'/>-->
-<!--                                                    <stop offset='100%' stop-color='#8d4fff'/>-->
-<!--												</linearGradient>-->
-<!--											</defs>-->
-<!--                                                <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z-->
-<!--										M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571-->
-<!--										C22.545,2,26,5.541,26,9.909V23.091z"/>-->
-<!--                                                <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554-->
-<!--										17.046,15.554 "/>-->
-<!--										</svg>-->
-<!--                                        </div>-->
-
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            </div>-->
-<!--                            &lt;!&ndash;  modal popup here &ndash;&gt;-->
-<!--                            <div class="modal bd-example-modal-lg fade in" th:id="modal+${image.id }" >-->
-<!--                                <div class="modal-dialog modal-lg">-->
-<!--                                    <div class="modal-content" style="padding: 20px;">-->
-<!--                                        <div class="hotel_image">-->
-<!--                                            <img th:src="${image.source}" alt="">-->
-<!--                                        </div>-->
-<!--                                            <div class="reviews">-->
-<!--                                                <div class="reviews_title">Comments</div>-->
-
-<!--                                                    <div class="reviews_container" th:each="comment : ${commentSet}">-->
-<!--                                                        <div class="review">-->
-<!--                                                            <div class="row">-->
-<!--                                                                <div class="col-lg-1">-->
-<!--                                                                    <div class="review_image">-->
-<!--                                                                        <img th:src="@{/images/default_user.jpg}" alt="">-->
-<!--                                                                    </div>-->
-<!--                                                                </div>-->
-<!--                                                                <div class="col-lg-11">-->
-<!--                                                                    <div class="review_content">-->
-<!--                                                                        <p th:text="${comment.content}"></p>-->
-<!--                                                                        <div class="review_name" th:text="${comment.user.name}"></div>-->
-<!--                                                                    </div>-->
-<!--                                                                </div>-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-
-<!--                                                <div class="reviews_title">Your Comment</div>-->
-
-<!--                                                <form action="#" id="modal_contact_form" class="contact_form text-center">-->
-<!--                                                                <textarea id="modal_contact_form_message" class="text_field contact_form_message"-->
-<!--                                                                          name="message" rows="4" required="required" placeholder="What do you think?"-->
-<!--                                                                          data-error="Please, write us a comment." style="color: black;"></textarea>-->
-<!--                                                    <button type="submit" id="modal_form_submit_button" class="form_submit_button button trans_200">post comment<span></span><span></span><span></span></button>-->
-<!--                                                </form>-->
-
-<!--                                            </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-                            <div class="hotel_image">
-                                <a
-                                        data-toggle="modal" data-target="#modal"
-                                        th:attr="data-target='#modaltest'">
-                                    <img th:src="@{/images/listing_hotel.jpg}" alt="">
-                                </a>
-
-                                <div class="hotel_review_container d-flex flex-column align-items-center justify-content-center">
-                                    <div class="hotel_review">
-                                        <div class="hotel_review_content">
-                                            <div class="hotel_review_title">very good</div>
-                                            <div class="hotel_review_subtitle">100 comments</div> <!-- pass comment count here -->
+                                            <ul class="carousel-indicators list-inline mx-auto border px-2">
+                                                <li th:each="img,iter : ${post.getImages()}" th:if="${iter.index == 0}"
+                                                    th:class="${'list-inline-item active'}">
+                                                    <a th:id="${'carousel-selector-' + iter.index}" class="selected"
+                                                       th:data-slide-to="${iter.index}" data-target="#myCarousel">
+                                                        <img th:src="${img.getSource()}" class="img-fluid">
+                                                    </a>
+                                                </li>
+                                                <li th:each="img,iter : ${post.getImages()}" th:if="${iter.index != 0}"
+                                                    th:class="${'list-inline-item'}">
+                                                    <a th:id="${'carousel-selector-' + iter.index}"
+                                                       th:data-slide-to="${iter.index}" data-target="#myCarousel">
+                                                        <img th:src="${img.getSource()}" class="img-fluid">
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="hotel_review_rating text-center">83</div> <!-- pass rating count here -->
                                     </div>
+
                                 </div>
+                                <!--/main slider carousel-->
                             </div>
+
                             <!--  modal popup here -->
-                            <div class="modal bd-example-modal-lg fade in" th:id="modaltest" >
+                            <div class="modal bd-example-modal-lg fade in" th:id="modaltest">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content" style="padding: 40px;">
-                                        <div class="hotel_image">
-                                            <img th:src="@{/images/listing_hotel.jpg}" alt="">
+                                        <div class="modal_hotel_image">
+                                            <img style="max-width: 100%" th:src="@{/images/listing_hotel.jpg}">
                                         </div>
+                                        <div>
+
+                                            <span data-img-id=""><i class="fa fa-thumbs-up rate_img"></i></span>
+                                            <span class="rating_numbers img_rating"></span>
+
                                         <div class="reviews">
                                             <div class="reviews_title">Comments</div>
-
-                                            <!--                            <div class="reviews_container" th:each="comment : ${commentSet}">-->
-                                            <!--                                <div class="review">-->
-                                            <!--                                    <div class="row">-->
-                                            <!--                                        <div class="col-lg-1">-->
-                                            <!--                                            <div class="review_image">-->
-                                            <!--                                                <img th:src="@{/images/default_user.jpg}" alt="">-->
-                                            <!--                                            </div>-->
-                                            <!--                                        </div>-->
-                                            <!--                                        <div class="col-lg-11">-->
-                                            <!--                                            <div class="review_content">-->
-                                            <!--                                                <p th:text="${comment.content}"></p>-->
-                                            <!--                                                <div class="review_name" th:text="${comment.user.name}"></div>-->
-                                            <!--                                            </div>-->
-                                            <!--                                        </div>-->
-                                            <!--                                    </div>-->
-                                            <!--                                </div>-->
-                                            <!--                            </div>-->
-
-
-                                            <div class="reviews_container">
-
+                                            <div class="reviews_container modal_reviews">
                                                 <!-- Comment -->
-                                                <div class="review">
-                                                    <div class="row">
-                                                        <div class="col-md-1" style="margin-right: 15px;">
-                                                            <div class="review_image">
-                                                                <img th:src="@{/images/review_1.jpg}" alt="https://unsplash.com/@saaout">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-10">
-                                                            <div class="review_content">
-                                                                <p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-
-                                                                <div class="review_name">Christinne Smith</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                             </div>
 
                                             <div class="reviews_title">Your Comment</div>
 
-                                            <form action="#" id="modal_contact_form" class="contact_form text-center">
-                                                <textarea id="modal_contact_form_message" class="text_field contact_form_message"
-                                                          name="message" rows="4" required="required" placeholder="What do you think?"
-                                                          data-error="Please, write us a comment." style="color: black;"></textarea>
-                                                <button type="submit" id="modal_form_submit_button" class="form_submit_button button trans_200">post comment<span></span><span></span><span></span></button>
+                                            <form id="image_comment_form" action="/comment/create" method="post"
+                                                  class="contact_form text-center">
+                                                <input type="hidden" name="userId" th:value="${post.getUserId()}">
+                                                <input type="hidden" name="imageId" th:value="${post.getId()}">
+                                                <textarea class="text_field contact_form_message"
+                                                          name="content" rows="4" required="required"
+                                                          placeholder="What do you think?"
+                                                          data-error="Please, write us a comment."
+                                                          style="color: black;"></textarea>
+                                                <button type="submit" class="form_submit_button button trans_200">post
+                                                    comment<span></span><span></span><span></span></button>
                                             </form>
 
                                         </div>
@@ -258,178 +167,53 @@
                                 </div>
                             </div>
 
-                            <!-- Hotel Gallery -->
-
-                            <div class="hotel_gallery" >
-                                <div class="hotel_slider_container">
-                                    <div class="owl-carousel owl-theme hotel_slider">
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_1.jpg}">
-                                                <img th:src="@{/images/listing_thumb_1.jpg}" alt="https://unsplash.com/@jbriscoe">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_2.jpg}">
-                                                <img th:src="@{/images/listing_thumb_2.jpg}" alt="https://unsplash.com/@grovemade">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_3.jpg}">
-                                                <img th:src="@{/images/listing_thumb_3.jpg}" alt="https://unsplash.com/@fransaraco">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_4.jpg}">
-                                                <img th:src="@{/images/listing_thumb_4.jpg}" alt="https://unsplash.com/@workweek">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_5.jpg}">
-                                                <img th:src="@{/images/listing_thumb_5.jpg}" alt="https://unsplash.com/@workweek">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_6.jpg}">
-                                                <img th:src="@{/images/listing_thumb_6.jpg}" alt="https://unsplash.com/@avidenov">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_7.jpg}">
-                                                <img th:src="@{/images/listing_thumb_7.jpg}" alt="https://unsplash.com/@pietruszka">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_8.jpg}">
-                                                <img th:src="@{/images/listing_thumb_8.jpg}" alt="https://unsplash.com/@rktkn">
-                                            </a>
-                                        </div>
-
-                                        <!-- Hotel Gallery Slider Item -->
-                                        <div class="owl-item">
-                                            <a class="colorbox cboxElement" th:href="@{/images/listing_9.jpg}">
-                                                <img th:src="@{/images/listing_thumb_9.jpg}" alt="https://unsplash.com/@mindaugas">
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Hotel Slider Nav - Prev -->
-                                    <div class="hotel_slider_nav hotel_slider_prev">
-                                        <svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                             width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-											<defs>
-												<linearGradient id='hotel_grad_prev'>
-													<stop offset='0%' stop-color='#fa9e1b'/>
-                                                    <stop offset='100%' stop-color='#8d4fff'/>
-												</linearGradient>
-											</defs>
-                                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-											M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-											C22.545,2,26,5.541,26,9.909V23.091z"/>
-                                            <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219
-											11.042,18.219 "/>
-										</svg>
-                                    </div>
-
-                                    <!-- Hotel Slider Nav - Next -->
-                                    <div class="hotel_slider_nav hotel_slider_next">
-                                        <svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                             width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-											<defs>
-												<linearGradient id='hotel_grad_next'>
-													<stop offset='0%' stop-color='#fa9e1b'/>
-                                                    <stop offset='100%' stop-color='#8d4fff'/>
-												</linearGradient>
-											</defs>
-                                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-										M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-										C22.545,2,26,5.541,26,9.909V23.091z"/>
-                                            <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554
-										17.046,15.554 "/>
-										</svg>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- Hotel Info Text -->
-                            <!-- pass post info here -->
                             <div class="hotel_info_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum. Aenean in lacus ligula. Phasellus euismod gravida eros. Aenean nec ipsum aliquet, pharetra magna id, interdum sapien. Etiam id lorem eu nisl pellentesque semper. Nullam tincidunt metus placerat, suscipit leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend dui nunc, non fermentum quam placerat non. Etiam venenatis nibh augue, sed eleifend justo tristique eu</p>
+                                <div th:utext="${post.getInfo()}"></div>
                             </div>
 
                         </div>
 
+                        <div>
+                            <span th:data-post-id="${post.getId()}"><i class="fa fa-thumbs-up rate_post"></i></span>
+                            <span class="rating_numbers" th:if="${post.getRatings() != null }">
+                                <span th:each="rating : ${post.getRatings()}">
+                                    <span class="post_rating"
+                                          th:if="${rating.getUserName() == #authentication.getName()}"
+                                          th:object="${rating}"
+                                          th:text="${'You and ' + post.getRatings().size()  + ' others have liked this post'}"
+                                          th:data-status="false">
+                                    </span>
+                                    <span class="post_rating"
+                                          th:if="${rating.getUserName() != #authentication.getName()}"
+                                          th:text="${post.getRatings().size() + ' have liked this post'}"
+                                          th:data-status="true">
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="rating_numbers post_rating" th:if="${post.getRatings() == null}"
+                                  th:data-status="true" th:text="${'Be first to like this post'}"></span>
+                        </div>
                         <!-- Comments -->
+
 
                         <div class="reviews">
                             <div class="reviews_title">Comments</div>
 
-<!--                            <div class="reviews_container" th:each="comment : ${commentSet}">-->
-<!--                                <div class="review">-->
-<!--                                    <div class="row">-->
-<!--                                        <div class="col-lg-1">-->
-<!--                                            <div class="review_image">-->
-<!--                                                <img th:src="@{/images/default_user.jpg}" alt="">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-lg-11">-->
-<!--                                            <div class="review_content">-->
-<!--                                                <p th:text="${comment.content}"></p>-->
-<!--                                                <div class="review_name" th:text="${comment.user.name}"></div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-                            <div class="reviews_container">
+                            <div class="reviews_container" th:if="${post.getComments() != null}"
+                                 th:each="comment : ${post.getComments()}">
 
                                 <!-- Comment -->
                                 <div class="review">
                                     <div class="row">
                                         <div class="col-lg-1">
                                             <div class="review_image">
-                                                <img th:src="@{/images/review_1.jpg}" alt="https://unsplash.com/@saaout">
+                                                <img th:src="@{/images/user.png}">
                                             </div>
                                         </div>
                                         <div class="col-lg-11">
                                             <div class="review_content">
-                                                <p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-                                                <div class="review_name">Christinne Smith</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Comment -->
-                                <div class="review">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                            <div class="review_image">
-                                                <img th:src="@{/images/review_2.jpg}" alt="Image by Andrew Robles">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-11">
-                                            <div class="review_content">
-                                                <p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-                                                <div class="review_name">Christinne Smith</div>
+                                                <p th:text="${comment.getContent()}"></p>
+                                                <div class="review_name" th:text="${comment.getUserName()}"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -437,252 +221,39 @@
 
                             </div>
 
-                            <div class="reviews_title">Your Comment</div>
+                            <div class="reviews_title" style="margin-top: 20px">Your Comment</div>
 
-                            <form action="#" id="contact_form" class="contact_form text-center">
+                            <form id="post_comment_form" action="/comment/create" method="post"
+                                  class="contact_form text-center">
+                                <input type="hidden" name="userId" th:value="${post.getUserId()}">
+                                <input type="hidden" name="postId" th:value="${post.getId()}">
                                 <textarea id="contact_form_message" class="text_field contact_form_message"
-                                          name="message" rows="4" required="required" placeholder="What do you think?"
+                                          name="content" rows="4" required="required" placeholder="What do you think?"
                                           data-error="Please, write us a comment." style="color: black;"></textarea>
-                                <button type="submit" id="form_submit_button" class="form_submit_button button trans_200">post comment<span></span><span></span><span></span></button>
+                                <button type="submit" id="form_submit_button"
+                                        class="form_submit_button button trans_200">post
+                                    comment<span></span><span></span><span></span></button>
                             </form>
 
-        
-                          
-            <div class="container">
-                <div class="intro" style="padding: 60px;">
-                    <div class="intro_title" style="color: black;">0q932 Warren Str
-<!--                        place address here -->
-                    </div>
-                    <div class="intro_text"> ladjfladjfa
-<!--                        place info here -->
-                    </div>
-                </div>
-                <div class="row">
 
-                    <!-- Blog Content -->
-
-                    <div class="col-lg-8">
-
-                        <div class="blog_post_container">
-
-                            <!-- pass post data here -->
-
-                            <div class="blog_post">
-                                <div class="blog_post_image">
-                                    <img src="images/blog_1.jpg" alt="https://unsplash.com/@anniespratt">
-                                    <div class="blog_post_date d-flex flex-column align-items-center justify-content-center">
-                                        <div class="blog_post_day">01</div>
-                                        <div class="blog_post_month">Dec, 2017</div>
-                                    </div>
-                                </div>
-                                <div class="blog_post_meta">
-                                    <ul>
-                                        <li class="blog_post_meta_item"><a href="">by USER</a></li> <!-- pass guide/user name here -->
-                                        <li class="blog_post_meta_item"><a href="">3 Comments</a></li> <!-- pass comment count here -->
-                                    </ul>
-                                </div>
-                                <div class="blog_post_text"> <!-- pass post info here -->
-                                    <p>Aenean in lacus ligula. Phasellus euismod gravida eros. Aenean nec ipsum aliquet, pharetra magna id, interdum sapien. Etiam id lorem eu nisl pellentesque semper. Nullam tincidunt metus placerat, suscipit leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend dui nunc, non fermentum qua.</p>
-                                </div>
-                                <div class="blog_post_link"><a href="#">read more</a></div> <!-- link to detail post -->
-                            </div>
-
-                        </div>
-
-                        <!-- paginate here -->
-                        <div class="blog_navigation">
-                            <ul>
-                                <li class="blog_dot active"><div></div>01.</li>
-                                <li class="blog_dot"><div></div>02.</li>
-                                <li class="blog_dot"><div></div>03.</li>
-                            </ul>
                         </div>
                     </div>
-
-                    <!-- Blog Sidebar -->
-
-                    <div class="col-lg-4 sidebar_col">
-
-                        <!-- Sidebar Search -->
-                        <div class="sidebar_search">
-                            <form action="#">
-                                <input id="sidebar_search_input" type="search" class="sidebar_search_input" placeholder="" required="required">
-                                <button id="sidebar_search_button" type="submit" class="sidebar_search_button trans_300" value="Submit">
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-									<g>
-										<g>
-											<g>
-												<path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
-												s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
-												C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
-												M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
-												c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
-											</g>
-										</g>
-                                        <g>
-											<g>
-												<path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
-												c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
-												C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
-											</g>
-										</g>
-									</g>
-								</svg>
-                                </button>
-                            </form>
-                        </div>
-
-                        <!-- Sidebar Archives -->
-                        <div class="sidebar_archives">
-                            <div class="sidebar_title">Archives</div>
-                            <div class="sidebar_list">
-                                <ul>
-                                    <li><a href="#">March 2017</a></li>
-                                    <li><a href="#">April 2017</a></li>
-                                    <li><a href="#">May 2017</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Archives -->
-                        <div class="sidebar_categories">
-                            <div class="sidebar_title">Categories</div>
-                            <div class="sidebar_list">
-                                <ul>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Exotic Destinations</a></li>
-                                    <li><a href="#">City Breaks</a></li>
-                                    <li><a href="#">Travel Tips</a></li>
-                                    <li><a href="#">Lifestyle & Travel</a></li>
-                                    <li><a href="#">City Breaks</a></li>
-                                    <li><a href="#">Uncategorized</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Latest Posts -->
-
-                        <div class="sidebar_latest_posts">
-                            <div class="sidebar_title">Latest Posts</div>
-                            <div class="latest_posts_container">
-                                <ul>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">A simple blog post</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">Dream destination for you</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">Tips to travel light</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Latest Post -->
-                                    <li class="latest_post clearfix">
-                                        <div class="latest_post_image">
-                                            <a href="#"><img src="images/latest_4.jpg" alt=""></a>
-                                        </div>
-                                        <div class="latest_post_content">
-                                            <div class="latest_post_title trans_200"><a href="#">How to pick your vacation</a></div>
-                                            <div class="latest_post_meta">
-                                                <div class="latest_post_author trans_200"><a href="#">by Jane Smith</a></div>
-                                                <div class="latest_post_date trans_200"><a href="#">Aug 25, 2016</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Gallery -->
-                        <div class="sidebar_gallery">
-                            <div class="sidebar_title">Instagram</div>
-                            <div class="gallery_container">
-                                <ul class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixlib=rb-0.3.5&s=c0996cd16eda8c6f54c398de02d03cd3&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_1.jpg" alt="https://unsplash.com/@mantashesthaven">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1495162048225-6b3b37b8a69e?ixlib=rb-0.3.5&s=861dd3c7b9d3e735d7fd7cbb1eefed64&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_2.jpg" alt="https://unsplash.com/@kensuarez">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1502646275263-04be86afa386?ixlib=rb-0.3.5&s=682a41d7d9bf6e3feabc73a5fdd61dd2&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_3.jpg" alt="https://unsplash.com/@jakobowens1">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1484820301304-0b43512779dc?ixlib=rb-0.3.5&s=7a3393e9f507fb4718c36337a8014c52&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_4.jpg" alt="https://unsplash.com/@seefromthesky">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1490380169520-0a4b88d52565?ixlib=rb-0.3.5&s=7e6b68b1911fb4ffeea4c0750b8a5269&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_5.jpg" alt="https://unsplash.com/@deannaritchie">
-                                        </a>
-                                    </li>
-                                    <li class="gallery_item">
-                                        <a class="colorbox" href="https://images.unsplash.com/photo-1504434026032-a7e440a30b68?ixlib=rb-0.3.5&s=2cc35bf903b78ba4f7f7ed69bc2abe3f&auto=format&fit=crop&w=720&q=80">
-                                            <img src="images/gallery_6.jpg" alt="https://unsplash.com/@benobro">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                    </div>
+                    <div th:replace="fragment/footer :: footer"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div th:replace="fragment/footer :: footer"></div>
 </div>
 <script src="../../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
 <script src="../../static/styles/bootstrap4/popper.js" th:src="@{/styles/bootstrap4/popper.js}"></script>
 <script src="../../static/styles/bootstrap4/bootstrap.min.js" th:src="@{/styles/bootstrap4/bootstrap.min.js}"></script>
-<script src="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js" th:src="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+<script src="../../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"
+        th:src="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
 <script src="../../static/plugins/easing/easing.js" th:src="@{/plugins/easing/easing.js}"></script>
 <script src="../../static/js/custom.js" th:src="@{/js/custom.js}"></script>
+<script src="../../static/js/post_detail.js" th:src="@{/js/post_detail.js}"></script>
 <script src="../../static/js/single_listing_custom.js" th:src="@{/js/single_listing_custom.js}"></script>
-<script src="../../static/plugins/parallax-js-master/parallax.min.js" th:src="@{/plugins/parallax-js-master/parallax.min.js}"></script>
+<script src="../../static/plugins/parallax-js-master/parallax.min.js"
+        th:src="@{/plugins/parallax-js-master/parallax.min.js}"></script>
 </body>
-
 </html>

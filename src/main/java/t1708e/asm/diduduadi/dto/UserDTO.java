@@ -7,6 +7,8 @@
 
 package t1708e.asm.diduduadi.dto;
 
+import java.util.List;
+
 public class UserDTO implements java.io.Serializable {
     private String address;
 
@@ -29,6 +31,16 @@ public class UserDTO implements java.io.Serializable {
     private String token;
 
     private String username;
+
+    private List<String> role;
+
+    public List<String> getRole() {
+        return role;
+    }
+
+    public void setRole(List<String> role) {
+        this.role = role;
+    }
 
     public UserDTO() {
     }

@@ -7,6 +7,8 @@
 
 package t1708e.asm.diduduadi.dto;
 
+import java.util.List;
+
 public class ImageDTO implements java.io.Serializable {
     private int id;
 
@@ -15,6 +17,24 @@ public class ImageDTO implements java.io.Serializable {
     private String source;
 
     private int status;
+    private List<CommentDTO> comments;
+    private List<RatingDTO> ratings;
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
+    }
+
+    public List<RatingDTO> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<RatingDTO> ratings) {
+        this.ratings = ratings;
+    }
 
     public ImageDTO() {
     }
