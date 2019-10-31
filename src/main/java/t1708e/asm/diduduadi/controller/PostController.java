@@ -131,6 +131,7 @@ public class PostController {
             like = "Be first to like this post";
             likeStatus = true;
         }
+        model.addAttribute("currentPost",postDTO);
         model.addAttribute("like", like);
         model.addAttribute("likeStatus", likeStatus);
         model.addAttribute("post", postDTO);

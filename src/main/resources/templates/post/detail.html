@@ -85,7 +85,7 @@
                     <div class="single_listing">
 
                         <!-- Hotel Info -->
-
+                        <h1 th:text="${currentPost.title}" style="font-weight: bold"></h1>
                         <div class="hotel_info">
 
                             <!-- Title -->
@@ -130,6 +130,13 @@
 
                                 </div>
                                 <!--/main slider carousel-->
+<!--                                <div class="container">-->
+<!--                                    <p th:utext="${currentPost.info}" th:remove="tag" style="color: black"></p>-->
+<!--                                </div>-->
+                                <div class="blog_post_text">
+                                    <p th:utext="${currentPost.info}" th:remove="tag" style="color: black"></p>
+                                </div>
+
                             </div>
 
                             <!--  modal popup here -->
@@ -229,12 +236,14 @@
 
                         </div>
                     </div>
-                    <div th:replace="fragment/footer :: footer"></div>
+
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+    <div th:replace="fragment/footer :: footer"></div>
 </div>
 <script src="../../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
 <script src="../../static/styles/bootstrap4/popper.js" th:src="@{/styles/bootstrap4/popper.js}"></script>

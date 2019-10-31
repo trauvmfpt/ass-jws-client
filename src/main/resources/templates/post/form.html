@@ -42,8 +42,19 @@
 <!--    <div th:replace="fragment/header :: header"></div>-->
     <div th:replace="fragment/header :: header"></div>
 
-    <div layout:fragment="content" style="margin-top: 150px">
+    <div layout:fragment="content">
 
+        <div class="home">
+            <div class="home_background parallax-window" data-parallax="scroll"
+                 data-image-src="../../static/images/contact_background.jpg"
+                 th:src="@{/images/contact_background.jpg}">
+                <img src="../../static/images/contact_background.jpg"
+                     th:src="@{/images/contact_background.jpg}">
+            </div>
+            <div class="home_content">
+                <div class="home_title" >Post</div>
+            </div>
+        </div>
         <!-- Contact -->
 
         <div class="contact_form_section">

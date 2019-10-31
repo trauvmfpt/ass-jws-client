@@ -24,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService {
             user = new Gson().fromJson(userService.getByUserName(s), UserDTO.class);
             rolesArray = new String[user.getRole().size()];
             rolesArray = user.getRole().toArray(rolesArray);
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             user = new UserDTO();
             user.setUsername("null");
