@@ -67,6 +67,9 @@
             margin-left: 1%;
             font-weight: bold;
         }
+        .thumbnail{
+            max-width: 200px;
+        }
     </style>
 </head>
 
@@ -75,7 +78,7 @@
 <div class="super_container">
     <div th:replace="fragment/header :: header(title= ${post.getTitle()})"></div> <!-- pass place name here -->
 
-    <div layout:fragment="content">
+    <div layout:fragment="content" style="margin-top: 150px">
         <div class="container">
             <div class="row">
                 <div class="super_container">
@@ -111,14 +114,14 @@
                                                     th:class="${'list-inline-item active'}">
                                                     <a th:id="${'carousel-selector-' + iter.index}" class="selected"
                                                        th:data-slide-to="${iter.index}" data-target="#myCarousel">
-                                                        <img th:src="${img.getSource()}" class="img-fluid">
+                                                        <img th:src="${img.getSource()}" class="img-fluid thumbnail">
                                                     </a>
                                                 </li>
                                                 <li th:each="img,iter : ${post.getImages()}" th:if="${iter.index != 0}"
                                                     th:class="${'list-inline-item'}">
                                                     <a th:id="${'carousel-selector-' + iter.index}"
                                                        th:data-slide-to="${iter.index}" data-target="#myCarousel">
-                                                        <img th:src="${img.getSource()}" class="img-fluid">
+                                                        <img th:src="${img.getSource()}" class="img-fluid thumbnail">
                                                     </a>
                                                 </li>
                                             </ul>
@@ -139,7 +142,9 @@
                                         <div>
 
                                             <span data-img-id=""><i class="fa fa-thumbs-up rate_img"></i></span>
-                                            <span class="rating_numbers img_rating"></span>
+                                            <span class="rating_numbers">
+                                                <span class="img_rating"></span>
+                                            </span>
 
                                         <div class="reviews">
                                             <div class="reviews_title">Comments</div>
@@ -172,26 +177,13 @@
                             </div>
 
                         </div>
-
                         <div>
                             <span th:data-post-id="${post.getId()}"><i class="fa fa-thumbs-up rate_post"></i></span>
-                            <span class="rating_numbers" th:if="${post.getRatings() != null }">
-                                <span th:each="rating : ${post.getRatings()}">
-                                    <span class="post_rating"
-                                          th:if="${rating.getUserName() == #authentication.getName()}"
-                                          th:object="${rating}"
-                                          th:text="${'You and ' + post.getRatings().size()  + ' others have liked this post'}"
-                                          th:data-status="false">
-                                    </span>
-                                    <span class="post_rating"
-                                          th:if="${rating.getUserName() != #authentication.getName()}"
-                                          th:text="${post.getRatings().size() + ' have liked this post'}"
-                                          th:data-status="true">
-                                    </span>
+                            <input type="hidden" th:id="'loggedInUser'" th:value="${#authentication.getName()}">
+                            <span class="rating_numbers">
+                                <span class="post_rating" th:text="${like}" th:data-status="${likeStatus}">
                                 </span>
-                            </span>
-                            <span class="rating_numbers post_rating" th:if="${post.getRatings() == null}"
-                                  th:data-status="true" th:text="${'Be first to like this post'}"></span>
+                             </span>
                         </div>
                         <!-- Comments -->
 
@@ -235,7 +227,6 @@
                                     comment<span></span><span></span><span></span></button>
                             </form>
 
-
                         </div>
                     </div>
                     <div th:replace="fragment/footer :: footer"></div>
@@ -243,6 +234,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <script src="../../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
 <script src="../../static/styles/bootstrap4/popper.js" th:src="@{/styles/bootstrap4/popper.js}"></script>
@@ -255,5 +247,34 @@
 <script src="../../static/js/single_listing_custom.js" th:src="@{/js/single_listing_custom.js}"></script>
 <script src="../../static/plugins/parallax-js-master/parallax.min.js"
         th:src="@{/plugins/parallax-js-master/parallax.min.js}"></script>
+    <script>
+        $(".rate_post").click(function (){
+            if($("#loggedInUser").val() == 'anonymousUser'){
+                alert("You must log in to like this post");
+            }
+            else{
+                var formData = {
+                    "postId" : $(this).parent().data('post-id'),
+                    "imageId" : $(this).data('imgid'),
+                    "status" : $(".post_rating").data("status"),
+                };
+                rate(formData);
+            }
+        });
+
+        $(".rate_img").click(function (){
+            if($("#loggedInUser").val() == 'anonymousUser'){
+                alert("You must log in to like this image")
+            }
+            else {
+                var formData = {
+                    "postId" : 0,
+                    "imageId" : $(this).data('img-id'),
+                    "status" : $(".img_rating").data("status"),
+                };
+                rate(formData);
+            }
+        });
+    </script>
 </body>
 </html>

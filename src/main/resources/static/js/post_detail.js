@@ -31,20 +31,35 @@ $(".big_image").click(function (){
                 console.log(result)
 
                 if(result.data.ratings != null){
-                    for(var i = 0; i < result.data.ratings.length; i++){
-                        if(result.data.ratings[i].userName == $("#loggedInUser").find("a").text()){
-                            $(".rating_numbers").text("You and " + result.data.ratings.length + " others have liked this image");
+                    if(result.data.ratings.length == 1){
+                        if(result.data.ratings[0].userName == $("#loggedInUser").find("a").text()){
+                            $(".img_rating").text("You liked this image");
                             $(".rate_img").css("color", "skyblue");
                             $(".img_rating").attr('data-status', false);
                         }
                         else{
-                            $(".rating_numbers").text(result.data.ratings.length + " others have liked this image");
+                            $(".img_rating").text("1 other liked this image");
                             $(".img_rating").attr('data-status', true);
+                        }
+                    }
+                    else{
+                        for(var i = 0; i < result.data.ratings.length; i++){
+                            if(result.data.ratings[i].userName == $("#loggedInUser").find("a").text()){
+                                $(".img_rating").text("You and " + (result.data.ratings.length - 1) + " others have liked this image");
+                                $(".rate_img").css("color", "skyblue");
+                                $(".img_rating").attr('data-status', false);
+                                break;
+                            }
+                            else{
+                                $(".img_rating").text(result.data.ratings.length + " others have liked this image");
+                                $(".img_rating").attr('data-status', true);
+                            }
                         }
                     }
                 }
                 else{
-                    $(".rating_numbers").text("Be first to like this image");
+                    $(".img_rating").text("Be first to like this image");
+                    $(".img_rating").attr('data-status', true);
                 }
                $("#modaltest").modal("show");
             },
@@ -52,24 +67,6 @@ $(".big_image").click(function (){
                 alert("error");
             }
         });
-});
-
-$(".rate_post").click(function (){
-    var formData = {
-        "postId" : $(this).parent().data('post-id'),
-        "imageId" : $(this).data('imgid'),
-        "status" : $(".post_rating").data("status"),
-    };
-     rate(formData);
-});
-
-$(".rate_img").click(function (){
-    var formData = {
-        "postId" : 0,
-        "imageId" : $(this).data('img-id'),
-        "status" : $(".img_rating").data("status"),
-    };
-    rate(formData);
 });
 
 function rate(formData){

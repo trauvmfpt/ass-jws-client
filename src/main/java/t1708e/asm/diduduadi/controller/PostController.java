@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import t1708e.asm.diduduadi.dto.PlaceDTO;
 import t1708e.asm.diduduadi.dto.PostDTO;
+import t1708e.asm.diduduadi.dto.RatingDTO;
 import t1708e.asm.diduduadi.dto.UserDTO;
 import t1708e.asm.diduduadi.entity.*;
 import t1708e.asm.diduduadi.service.place.PlaceService;
@@ -95,7 +96,43 @@ public class PostController {
     }
     @RequestMapping(method = RequestMethod.GET,  value = "/{id}")
     public String detail(@PathVariable int id, Model model) throws RemoteException {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
         PostDTO postDTO = new Gson().fromJson(postService.getByIdPost(id),PostDTO.class);
+        String like = "";
+        boolean likeStatus = true;
+        if(postDTO.getRatings() != null){
+            if(postDTO.getRatings().size() == 1 ){
+               if(postDTO.getRatings().get(0).getUserName().equals(name)){
+                   like = "You have liked this post";
+                   likeStatus = false;
+               }
+               else{
+                   like = "1 other liked this post";
+                   likeStatus = true;
+               }
+            }
+            else{
+                for (RatingDTO r: postDTO.getRatings()
+                ) {
+                    if(r.getUserName().equals(name)){
+                        like = "You and " + (postDTO.getRatings().size() - 1) + " others have liked this post";
+                        likeStatus = false;
+                        break;
+                    }
+                    else{
+                        like = postDTO.getRatings().size() + " others have liked this post";
+                        likeStatus = true;
+                    }
+                }
+            }
+        }
+        else{
+            like = "Be first to like this post";
+            likeStatus = true;
+        }
+        model.addAttribute("like", like);
+        model.addAttribute("likeStatus", likeStatus);
         model.addAttribute("post", postDTO);
         return "post/detail";
     }
